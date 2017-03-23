@@ -1,3 +1,4 @@
+2017年3月23日测试
 // 宣告本地變量
 txt_userId = document.getElementById("txt_userId");
 txt_userName = document.getElementById("txt_userName");

@@ -4,7 +4,7 @@
     <bundleClass>com.dsc.nana.domain.form.FormDefinition</bundleClass>
   </bundleContainer>
   <containerOID>51b63a61dede100487a94635dc8ba3d0</containerOID>
-  <createdTime id="3">2017-03-23 08:47:09.882</createdTime>
+  <createdTime id="3">2017-03-23 09:11:38.328</createdTime>
   <dataAccessDefinitions class="list" id="4"/>
   <description></description>
   <EleCountForDesigner>0</EleCountForDesigner>
@@ -1909,7 +1909,7 @@
       <string></string>
     </entry>
   </multiZhMap>
-  <name>demo001-办公用品申领单</name>
+  <name>yaping_lab003办公用品申领单</name>
   <processCommentType id="264">
     <value>SHOW_ALL</value>
   </processCommentType>
@@ -2121,7 +2121,7 @@ from Z_BGYP</statement>
     </com.dsc.nana.domain.form.SqlCommand>
   </sqlCmds>
   <validFrom id="270">2017-03-11 16:09:39.0</validFrom>
-  <version>5</version>
+  <version>11</version>
   <appDesignType id="271">
     <value>-1</value>
   </appDesignType>
@@ -2144,6 +2144,6 @@ return true;
   <dtoState id="272">
     <value>1</value>
   </dtoState>
-  <OID>b3d4d804dedf100487a94635dc8ba3d0</OID>
+  <OID>bc95903cdedf100487a94635dc8ba3d0</OID>
   <objectVersion>1</objectVersion>
 </com.dsc.nana.domain.form.FormDefinition>
