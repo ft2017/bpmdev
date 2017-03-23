@@ -16,6 +16,11 @@ var txt_pm =  document.getElementById("txt_pm");//品名
 var txt_gg =  document.getElementById("txt_gg");//规格
 var txt_dw =  document.getElementById("txt_dw");//单位
 var txt_sqsl =  document.getElementById("txt_sqsl");//申请数量
+txt_sqrid. ReadOnly="true"
+txt_sqr. ReadOnly="true"
+txt_sqbmid. ReadOnly="true"
+txt_sqbm. ReadOnly="true"
+txt_sqrq. ReadOnly="true"
 
 function formCreate(){
   DefalInfo();
