@@ -16,6 +16,11 @@ var txt_pm =  document.getElementById("txt_pm");//品名
 var txt_gg =  document.getElementById("txt_gg");//规格
 var txt_dw =  document.getElementById("txt_dw");//单位
 var txt_sqsl =  document.getElementById("txt_sqsl");//申请数量
+txt_sqrid. ReadOnly="true"
+txt_sqr. ReadOnly="true"
+txt_sqbmid. ReadOnly="true"
+txt_sqbm. ReadOnly="true"
+txt_sqrq. ReadOnly="true"
 
 function formCreate(){
   DefalInfo();
@@ -51,7 +56,7 @@ if(checkNull()){
      	//判斷Grid是否有資料 
      	if(document.getElementById("Grid1").value=="[]")
 		{
-			alert("单身不能为空，请按新增按钮将单头资料插入单身中！");
+			alert("（婷婷3）单身不能为空，请按新增按钮将单头资料插入单身中！");
 			return false ;
    		}
    		return true;
@@ -68,7 +73,7 @@ if(activityId == "UserTask_3" ){
 		var tMsg = "";
 		var tErrMsg = "不能为空";			
 		if(d_sqlx.value == "" ){	
-			tMsg = tMsg + "申请类型" + tErrMsg + " \r\n";
+			tMsg = tMsg + "（婷婷）申请类型" + tErrMsg + " \r\n";
 		}if(tMsg == ""){
 			return true;
 		}else{
@@ -134,7 +139,7 @@ function gridcheckNull(){
 		}if(txt_dw.value == "" ){	
 			tMsg = tMsg + "单位" + tErrMsg + " \r\n";
 		}if(txt_sqsl.value == "" ){	
-			tMsg = tMsg + "申请数量" + tErrMsg + " \r\n";
+			tMsg = tMsg + "（婷婷2）申请数量" + tErrMsg + " \r\n";
 		}
 		//--申请数量必须是数字
 		var str = document.getElementById("txt_sqsl").value ;
@@ -159,8 +164,8 @@ function d_sqlx_onclick(){
 	var index=obj.selectedIndex;//选中的索引；
 	var text=obj.options[index].text;//选中的文本
 	var Value=obj.options[index].value;//选中值
-	document.getElementById("hdn_sqlx").value = text;
-	document.getElementById("hdn_sqlxid").value = Value;
+	document.getElementById("hdn_sqlx").value = text;//当选择正常领用时，hdn_sqlx显示为正常领用
+	document.getElementById("hdn_sqlxid").value = Value;//当选择正常领用时，hdn_sqlxid显示为1
 }
 
 //申请数量必须是数字
@@ -174,7 +179,7 @@ function txt_sqsl_onblur(){
 	}
 }
 
-//单选开窗
+//单选开窗  只要数据库有东西，任何人都可以调用
 function btn_bgyp_onclick(){
 
   	var FileName = "SingleOpenWin";		

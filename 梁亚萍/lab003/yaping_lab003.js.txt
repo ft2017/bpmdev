@@ -48,10 +48,10 @@ if(checkNull()){
   		{  //判斷grid物件是否存在表單中   
     		document.getElementById("Grid1").value = Grid1Obj.toArrayString();  //將Grid裡的資料儲存至隱藏欄位中   
      	}
-     	//判斷Grid是否有資料 
+     	判斷Grid是否有資料 
      	if(document.getElementById("Grid1").value=="[]")
 		{
-			alert("（婷婷3）单身不能为空，请按新增按钮将单头资料插入单身中！");
+			//alert("（（亚萍33）单身不能为空，请按新增按钮将单头资料插入单身中！");
 			return false ;
    		}
    		return true;
@@ -68,7 +68,7 @@ if(activityId == "UserTask_3" ){
 		var tMsg = "";
 		var tErrMsg = "不能为空";			
 		if(d_sqlx.value == "" ){	
-			tMsg = tMsg + "（婷婷）申请类型" + tErrMsg + " \r\n";
+			tMsg = tMsg + "（亚萍）申请类型" + tErrMsg + " \r\n";
 		}if(tMsg == ""){
 			return true;
 		}else{
@@ -134,7 +134,7 @@ function gridcheckNull(){
 		}if(txt_dw.value == "" ){	
 			tMsg = tMsg + "单位" + tErrMsg + " \r\n";
 		}if(txt_sqsl.value == "" ){	
-			tMsg = tMsg + "（婷婷2）申请数量" + tErrMsg + " \r\n";
+			tMsg = tMsg + "（亚萍22)申请数量" + tErrMsg + " \r\n";
 		}
 		//--申请数量必须是数字
 		var str = document.getElementById("txt_sqsl").value ;
@@ -159,8 +159,8 @@ function d_sqlx_onclick(){
 	var index=obj.selectedIndex;//选中的索引；
 	var text=obj.options[index].text;//选中的文本
 	var Value=obj.options[index].value;//选中值
-	document.getElementById("hdn_sqlx").value = text;//当选择正常领用时，hdn_sqlx显示为正常领用
-	document.getElementById("hdn_sqlxid").value = Value;//当选择正常领用时，hdn_sqlxid显示为1
+	document.getElementById("hdn_sqlx").value = text;
+	document.getElementById("hdn_sqlxid").value = Value;
 }
 
 //申请数量必须是数字
@@ -174,7 +174,7 @@ function txt_sqsl_onblur(){
 	}
 }
 
-//单选开窗  只要数据库有东西，任何人都可以调用
+//单选开窗
 function btn_bgyp_onclick(){
 
   	var FileName = "SingleOpenWin";		
