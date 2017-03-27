@@ -20,32 +20,42 @@ var lbl7 = document.getElementById("lbl7");
 
 function btn1_onclick(){
     // alert("婷婷1btn_bgyp_onclick");
+   lbl1.value="品名";
+   lbl2.value="规格";
+   lbl3.value="单位";
+   lbl4.value="...";
+   lbl5.value="...";
+   lbl6.value="...";
+   lbl7.value="...";
+
   	var FileName = "SingleOpenWin";		
 	var sql = " select BGYPNAME,BGYPSPEC,BGYPUOM from Z_BGYP  "; 
 	var SQLClaused = new Array(sql);
 	var SQLLabel = new Array("品名","规格","单位");//客制开窗的Grid Label
 	var QBEField = new Array("BGYPNAME","BGYPSPEC","BGYPUOM");//模糊查询,須和DB Table栏位名称相同
 	var QBELabel = new Array("品名","规格","单位");//模糊查询的Label
-     var ReturnId = new Array("txt_pm","txt_gg","txt_dw");//表单上的栏位代号
+     var ReturnId = new Array("txte1","txte2","txte3",);//表单上的栏位代号
 	singleOpenWin(FileName, databaseCfgId_EFGP, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
      
 }
 
 function btn2_onclick(){
-    // alert("btn2_onclick");
-  	var FileName = "SingleOpenWin";		
-	var sql = " SELECT 单号,生产料号,品名,本站作业,生产数量,预计完工日 FROM V002 "; 
-	var SQLClaused = new Array(sql);
-	var SQLLabel = new Array("单号","生产料号","品名","本站作业","生产数量","预计完工日");//客制开窗的Grid Label
-	var QBEField = new Array("单号","生产料号","品名","本站作业","生产数量","预计完工日");//模糊查询,須和DB Table栏位名称相同
-	var QBELabel = new Array("单号","生产料号","品名","本站作业","生产数量","预计完工日");//模糊查询的Label
-     var ReturnId = new Array("txt1","txt2","txt3","txt4","txt5","txt6");//表单上的栏位代号
-	singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+    alert("暂无内容");
+  	
      
 }
 
 function btn3_onclick(){
     // alert("btn2_onclick");
+
+   lbl1.value="单号";
+   lbl2.value="生产料号";
+   lbl3.value="品名";
+   lbl4.value="本站作业";
+   lbl5.value="作业名称";
+   lbl6.value="生产数量";
+   lbl7.value="预计完工日";
+
   	var FileName = "SingleOpenWin";		
 	var sql = " SELECT 单号,生产料号,品名,本站作业,作业名称,生产数量,预计完工日 FROM V003 "; 
 	// 单号	生产料号	品名	本站作业	作业名称	生产数量	预计完工日
@@ -54,7 +64,7 @@ function btn3_onclick(){
 	var SQLLabel = new Array("单号","生产料号","品名","本站作业","作业名称","生产数量","预计完工日");//客制开窗的Grid Label
 	var QBEField = new Array("单号","生产料号","品名","本站作业","作业名称","生产数量","预计完工日");//模糊查询,須和DB Table栏位名称相同
 	var QBELabel = new Array("单号","生产料号","品名","本站作业","作业名称","生产数量","预计完工日");//模糊查询的Label
-     var ReturnId = new Array("txta1","txta2","txta3","txta4","txta5","txta6","txta7");//表单上的栏位代号
+     var ReturnId = new Array("txte1","txte2","txte3","txte4","txte5","txte6","txte7");//表单上的栏位代号
 	singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
      
 }
@@ -62,6 +72,14 @@ function btn3_onclick(){
 
 function btn4_onclick(){
     // alert("btn2_onclick");
+   lbl1.value="主件料号";
+   lbl2.value="品名";
+   lbl3.value="审核日期";
+   lbl4.value="...";
+   lbl5.value="...";
+   lbl6.value="...";
+   lbl7.value="...";
+
   	var FileName = "SingleOpenWin";		
 	var sql = " select UNIQUE(a.bmaa001) 主件料号,b.imaal003 品名,TO_CHAR(a.bmaacnfdt, 'YYYY-MM-DD') 审核日期 from bmaa_t a,  imaal_t b WHERE b.imaal001=a.bmaa001"; 
 	// 单号	生产料号	品名	本站作业	作业名称	生产数量	预计完工日
@@ -70,7 +88,7 @@ function btn4_onclick(){
 	var SQLLabel = new Array("主件料号"," 品名","审核日期");//客制开窗的Grid Label
 	var QBEField = new Array("主件料号"," 品名","审核日期");//模糊查询,須和DB Table栏位名称相同
 	var QBELabel = new Array("主件料号"," 品名","审核日期");//模糊查询的Label
-    var ReturnId = new Array("txtb1","txtb2","txtb3");//表单上的栏位代号
+    var ReturnId = new Array("txte1","txte2","txte3");//表单上的栏位代号
 	singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
      
 }
