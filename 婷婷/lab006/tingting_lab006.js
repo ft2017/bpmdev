@@ -2,8 +2,8 @@
 document.write('<script type="text/javascript" src="../../CustomJsLib/EFGPShareMethod.js"></script>');//for 开窗
 
 //数据库链接
-var databaseCfgId_EFGP = "EFGPTEST";   //系統管理員資料來源(DataAccessDefinition)代號
-var ds2 = "T100TEST";   //系統管理員資料來源(DataAccessDefinition)代號
+var databaseCfgId_EFGP = "EFGPTEST";   //办公用品
+var ds2 = "T100TEST";   //查询T
 
 // 2017-03-27准备设置一个通用的标签
 // var lble1 = document.getElementById("lble1");
