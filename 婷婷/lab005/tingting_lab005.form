@@ -4,7 +4,7 @@
     <bundleClass>com.dsc.nana.domain.form.FormDefinition</bundleClass>
   </bundleContainer>
   <containerOID>01fd3141dee8100487a94635dc8ba3d0</containerOID>
-  <createdTime id="3">2017-03-27 13:31:14.484</createdTime>
+  <createdTime id="3">2017-03-27 13:39:57.1</createdTime>
   <dataAccessDefinitions class="list" id="4"/>
   <description></description>
   <EleCountForDesigner>0</EleCountForDesigner>
@@ -2506,7 +2506,7 @@
         <value>0</value>
       </dataType>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:80px;font-style:normal;font-size:12px;background-color:#ffffff;left:650px;font-weight:normal;top:370px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:80px;background-color:#ffffff;left:650px;font-weight:normal;top:370px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="370">
@@ -2522,7 +2522,9 @@
           <readonlyBackgroundColor>16777215</readonlyBackgroundColor>
           <coordinateX>650</coordinateX>
           <coordinateY>370</coordinateY>
-          <alignType reference="142"/>
+          <alignType id="373">
+            <value>LEFT</value>
+          </alignType>
           <rwdRowIndex>-1</rwdRowIndex>
           <rwdColumnIndex>-1</rwdColumnIndex>
           <rwdContainer></rwdContainer>
@@ -2530,29 +2532,29 @@
       </elementStyles>
       <hint></hint>
       <id>lble6</id>
-      <multiZhMap id="373"/>
-      <name>lble8</name>
+      <multiZhMap id="374"/>
+      <name>lble6</name>
       <navindex>0</navindex>
       <precision>0</precision>
       <scale>0</scale>
       <persistentType>-1</persistentType>
       <doValidationOnSubmit>false</doValidationOnSubmit>
-      <validationRules class="list" id="374"/>
+      <validationRules class="list" id="375"/>
     </com.dsc.nana.domain.form.OutputElementDefinition>
-    <com.dsc.nana.domain.form.OutputElementDefinition id="375">
+    <com.dsc.nana.domain.form.OutputElementDefinition id="376">
       <length>0</length>
       <textValue>...</textValue>
-      <dataType id="376">
+      <dataType id="377">
         <value>0</value>
       </dataType>
       <isHideLabel>false</isHideLabel>
       <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:80px;background-color:#ffffff;left:750px;font-weight:normal;top:370px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
-      <elementStyles class="list" id="377">
-        <com.dsc.nana.domain.form.ElementStyle id="378">
+      <elementStyles class="list" id="378">
+        <com.dsc.nana.domain.form.ElementStyle id="379">
           <isShowOnDevice>true</isShowOnDevice>
-          <device id="379">
+          <device id="380">
             <value>0</value>
           </device>
           <height>20</height>
@@ -2562,7 +2564,7 @@
           <readonlyBackgroundColor>16777215</readonlyBackgroundColor>
           <coordinateX>750</coordinateX>
           <coordinateY>370</coordinateY>
-          <alignType reference="142"/>
+          <alignType reference="373"/>
           <rwdRowIndex>-1</rwdRowIndex>
           <rwdColumnIndex>-1</rwdColumnIndex>
           <rwdContainer></rwdContainer>
@@ -2570,17 +2572,17 @@
       </elementStyles>
       <hint></hint>
       <id>lble7</id>
-      <multiZhMap id="380"/>
+      <multiZhMap id="381"/>
       <name>lble7</name>
       <navindex>0</navindex>
       <precision>0</precision>
       <scale>0</scale>
       <persistentType>-1</persistentType>
       <doValidationOnSubmit>false</doValidationOnSubmit>
-      <validationRules class="list" id="381"/>
+      <validationRules class="list" id="382"/>
     </com.dsc.nana.domain.form.OutputElementDefinition>
-    <com.dsc.nana.domain.form.InputElementDefinition id="382">
-      <controlType id="383">
+    <com.dsc.nana.domain.form.InputElementDefinition id="383">
+      <controlType id="384">
         <value>INPUT_TYPE</value>
       </controlType>
       <isRequired>false</isRequired>
@@ -2602,10 +2604,10 @@
       <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:100px;font-style:normal;font-size:12px;background-color:#ffffff;left:740px;font-weight:normal;top:390px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
-      <elementStyles class="list" id="384">
-        <com.dsc.nana.domain.form.ElementStyle id="385">
+      <elementStyles class="list" id="385">
+        <com.dsc.nana.domain.form.ElementStyle id="386">
           <isShowOnDevice>true</isShowOnDevice>
-          <device id="386">
+          <device id="387">
             <value>0</value>
           </device>
           <height>20</height>
@@ -2623,24 +2625,24 @@
       </elementStyles>
       <hint></hint>
       <id>txte7</id>
-      <multiZhMap id="387"/>
+      <multiZhMap id="388"/>
       <name>txte7</name>
       <navindex>0</navindex>
       <precision>0</precision>
       <scale>0</scale>
       <persistentType>0</persistentType>
       <doValidationOnSubmit>false</doValidationOnSubmit>
-      <validationRules class="list" id="388"/>
+      <validationRules class="list" id="389"/>
     </com.dsc.nana.domain.form.InputElementDefinition>
-    <com.dsc.nana.domain.form.TriggerElementDefinition id="389">
+    <com.dsc.nana.domain.form.TriggerElementDefinition id="390">
       <caption>btn6 客户</caption>
       <cssStyle>position:absolute;height:25px;color:#000000;text-align:center;font-size:12px;font-style:normal;width:170px;background-color:#ffffff;left:240px;font-weight:normal;top:340px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
-      <elementStyles class="list" id="390">
-        <com.dsc.nana.domain.form.ElementStyle id="391">
+      <elementStyles class="list" id="391">
+        <com.dsc.nana.domain.form.ElementStyle id="392">
           <isShowOnDevice>true</isShowOnDevice>
-          <device id="392">
+          <device id="393">
             <value>0</value>
           </device>
           <height>25</height>
@@ -2658,41 +2660,41 @@
       </elementStyles>
       <hint></hint>
       <id>btn6</id>
-      <multiZhMap id="393"/>
+      <multiZhMap id="394"/>
       <name>btn6</name>
       <navindex>0</navindex>
       <precision>0</precision>
       <scale>0</scale>
       <persistentType>-1</persistentType>
       <doValidationOnSubmit>false</doValidationOnSubmit>
-      <validationRules class="list" id="394"/>
+      <validationRules class="list" id="395"/>
     </com.dsc.nana.domain.form.TriggerElementDefinition>
   </elementDefinitions>
-  <formDefinitionStyles class="list" id="395">
-    <com.dsc.nana.domain.form.FormDefinitionStyle id="396">
+  <formDefinitionStyles class="list" id="396">
+    <com.dsc.nana.domain.form.FormDefinitionStyle id="397">
       <device reference="10"/>
-      <backgroundImageSerialize id="397"></backgroundImageSerialize>
+      <backgroundImageSerialize id="398"></backgroundImageSerialize>
       <isAbsolutePosition>true</isAbsolutePosition>
       <height>560</height>
       <width>878</width>
     </com.dsc.nana.domain.form.FormDefinitionStyle>
   </formDefinitionStyles>
   <id>tingting_lab005v2</id>
-  <multiZhMap id="398">
+  <multiZhMap id="399">
     <entry>
-      <locale id="399">en_US</locale>
+      <locale id="400">en_US</locale>
       <string></string>
     </entry>
     <entry>
-      <locale id="400">zh_TW</locale>
+      <locale id="401">zh_TW</locale>
       <string></string>
     </entry>
   </multiZhMap>
   <name>tingting_lab005v2</name>
-  <processCommentType id="401">
+  <processCommentType id="402">
     <value>SHOW_ALL</value>
   </processCommentType>
-  <publicationStatus id="402">
+  <publicationStatus id="403">
     <value>RELEASED</value>
   </publicationStatus>
   <script>//常用引入外部JS
@@ -2803,8 +2805,8 @@ function formClose(){
 return true;
 }
 //$-----Auto generated script block, Please do not edit or modify script below this line.-----$//</script>
-  <sqlCmds class="list" id="403">
-    <com.dsc.nana.domain.form.SqlCommand id="404">
+  <sqlCmds class="list" id="404">
+    <com.dsc.nana.domain.form.SqlCommand id="405">
       <id>SQL2</id>
       <statement>SELECT 单号,生产料号,品名,本站作业,生产数量,预计完工日
 FROM V002</statement>
@@ -2812,23 +2814,23 @@ FROM V002</statement>
       <dataAcsDefId>T100TEST</dataAcsDefId>
       <query>true</query>
       <statical>true</statical>
-      <sqlTypes id="405"/>
-      <elementStyles class="set" id="406"/>
+      <sqlTypes id="406"/>
+      <elementStyles class="set" id="407"/>
     </com.dsc.nana.domain.form.SqlCommand>
-    <com.dsc.nana.domain.form.SqlCommand id="407">
+    <com.dsc.nana.domain.form.SqlCommand id="408">
       <id>SQL1</id>
       <statement>SELECT * FROM Z_BGYP</statement>
       <description></description>
       <dataAcsDefId>EFGPTEST</dataAcsDefId>
       <query>true</query>
       <statical>true</statical>
-      <sqlTypes id="408"/>
-      <elementStyles class="set" id="409"/>
+      <sqlTypes id="409"/>
+      <elementStyles class="set" id="410"/>
     </com.dsc.nana.domain.form.SqlCommand>
   </sqlCmds>
-  <validFrom id="410">2017-03-24 10:15:23.0</validFrom>
-  <version>4</version>
-  <appDesignType id="411">
+  <validFrom id="411">2017-03-24 10:15:23.0</validFrom>
+  <version>5</version>
+  <appDesignType id="412">
     <value>-1</value>
   </appDesignType>
   <mobileScript>function formCreate(){
@@ -2847,9 +2849,9 @@ return true;
   <SET__PROXY__CLASS__NAME>org.apache.ojb.broker.accesslayer.SetProxy</SET__PROXY__CLASS__NAME>
   <LIST__PROXY__CLASS__NAME>org.apache.ojb.broker.accesslayer.ListProxy</LIST__PROXY__CLASS__NAME>
   <dto>true</dto>
-  <dtoState id="412">
+  <dtoState id="413">
     <value>1</value>
   </dtoState>
-  <OID>255caa6cdee8100487a94635dc8ba3d0</OID>
+  <OID>2879f894dee8100487a94635dc8ba3d0</OID>
   <objectVersion>1</objectVersion>
 </com.dsc.nana.domain.form.FormDefinition>
