@@ -5,6 +5,11 @@ document.write('<script type="text/javascript" src="../../CustomJsLib/EFGPShareM
 var databaseCfgId_EFGP = "EFGPTEST";   //系統管理員資料來源(DataAccessDefinition)代號
 var ds2 = "T100TEST";   //系統管理員資料來源(DataAccessDefinition)代號
 
+// 2017-03-27准备设置一个通用的标签
+// var lble1 = document.getElementById("lble1");
+// var lble2 = document.getElementById("lble2");
+// var lble3 = document.getElementById("lble3");
+var lbl1 = document.getElementById("lbl1");
 
 function btn1_onclick(){
     // alert("婷婷1btn_bgyp_onclick");
@@ -79,6 +84,12 @@ function btn5_onclick(){
 }
 function btn6_onclick(){
     // alert("btn2_onclick");
+
+   lbl1.value="客户";
+   alert("lbl1.value="+lbl1.value);
+
+
+
   	var FileName = "SingleOpenWin";		
 	var sql = "select UNIQUE(a.pmaa001) 客户编号,b.pmaal003 客户全名,TO_CHAR(a.pmaacnfdt, 'YYYY-MM-DD') 资料审核日期  from pmaa_t a left join pmaal_t b on b.pmaal001=a.pmaa001 where a.pmaa002=2"; 
 	// 单号	生产料号	品名	本站作业	作业名称	生产数量	预计完工日
