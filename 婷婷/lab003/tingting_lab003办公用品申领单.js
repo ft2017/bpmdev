@@ -16,11 +16,11 @@ var txt_pm =  document.getElementById("txt_pm");//品名
 var txt_gg =  document.getElementById("txt_gg");//规格
 var txt_dw =  document.getElementById("txt_dw");//单位
 var txt_sqsl =  document.getElementById("txt_sqsl");//申请数量
-txt_sqrid. ReadOnly="true"
-txt_sqr. ReadOnly="true"
-txt_sqbmid. ReadOnly="true"
-txt_sqbm. ReadOnly="true"
-txt_sqrq. ReadOnly="true"
+txt_sqrid.ReadOnly="true"
+txt_sqr.ReadOnly="true"
+txt_sqbmid.ReadOnly="true"
+txt_sqbm.ReadOnly="true"
+txt_sqrq.ReadOnly="true"
 
 function formCreate(){
   DefalInfo();
@@ -181,7 +181,7 @@ function txt_sqsl_onblur(){
 
 //单选开窗  只要数据库有东西，任何人都可以调用
 function btn_bgyp_onclick(){
-
+    alert("婷婷1btn_bgyp_onclick");
   	var FileName = "SingleOpenWin";		
 	var sql = " select BGYPNAME,BGYPSPEC,BGYPUOM from Z_BGYP  "; 
 	var SQLClaused = new Array(sql);
