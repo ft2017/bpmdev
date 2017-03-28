@@ -269,18 +269,18 @@ function btn18_onclick() {
 
 
 // function btn18_onclick() {
-//     // // alert("btn18_onclick");
+// alert("btn18_onclick");
 
-//     // clearTxt();
+// clearTxt();
 
-//     // if (txtRadio.value == 0) {
+// if (txtRadio.value == 0) {
 
-//     //     alert("选择环境值的代码为0");
-//     // }
-//     // if (txtRadio.value == 1) {
+//     alert("选择环境值的代码为0");
+// }
+// if (txtRadio.value == 1) {
 
-//     //     alert("选择环境值的代码为1");
-//     // }
+//     alert("选择环境值的代码为1");
+// }
 
 // }
 
