@@ -345,7 +345,15 @@ function btn12_onclick(){
 }
 
 
-
+//供应商性质单选
+function radio_onclick(){    //radiobutton控件取值
+  var Rb_frb = document.getElementsByName("radio");
+  for(var i = 0 ;i<Rb_frb.length;i++){
+       if(Rb_frb[i].checked){
+        document.getElementById("txtRadio").value=Rb_frb[i].value;//实际值
+          }      
+    }
+}
 
 
 
@@ -358,6 +366,7 @@ function formCreate(){
 return true;
 }
 function formOpen(){
+  document.getElementById("txtRadio").value=0;//实际值
 return true;
 }
 function formSave(){
