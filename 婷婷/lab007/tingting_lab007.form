@@ -4,14 +4,14 @@
     <bundleClass>com.dsc.nana.domain.form.FormDefinition</bundleClass>
   </bundleContainer>
   <containerOID>c1369475dee9100487a94635dc8ba3d0</containerOID>
-  <createdTime id="3">2017-03-28 10:55:12.115</createdTime>
+  <createdTime id="3">2017-03-28 11:01:14.878</createdTime>
   <dataAccessDefinitions class="list" id="4"/>
   <description></description>
   <EleCountForDesigner>0</EleCountForDesigner>
   <elementDefinitions class="list" id="5">
     <com.dsc.nana.domain.form.TriggerElementDefinition id="6">
       <caption>btn1 测试办公用品</caption>
-      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:48px;font-weight:normal;top:96px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:48px;font-weight:normal;top:96px;</cssStyle>
       <cssDevice id="7">
         <value>0</value>
       </cssDevice>
@@ -50,7 +50,7 @@
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="14">
       <caption>btn2...</caption>
-      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:304px;font-weight:normal;top:96px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:304px;font-weight:normal;top:96px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="15">
@@ -92,7 +92,7 @@
         <value>0</value>
       </dataType>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:44px;text-align:center;color:#000000;width:500px;font-style:normal;font-size:48px;background-color:#ffffff;left:120px;font-weight:normal;top:40px;</cssStyle>
+      <cssStyle>position:absolute;height:44px;color:#000000;text-align:center;font-size:48px;font-style:normal;width:500px;background-color:#ffffff;left:120px;font-weight:normal;top:40px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="23">
@@ -129,7 +129,7 @@
     </com.dsc.nana.domain.form.OutputElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="29">
       <caption>btn3 工序预计完成日期</caption>
-      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:560px;font-weight:normal;top:96px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:560px;font-weight:normal;top:96px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="30">
@@ -166,7 +166,7 @@
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="36">
       <caption>btn4 BOM</caption>
-      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:48px;font-weight:normal;top:128px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:48px;font-weight:normal;top:128px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="37">
@@ -223,7 +223,7 @@
         <value>0</value>
       </dataType>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:50px;font-weight:normal;top:310px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:50px;font-weight:normal;top:310px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="46">
@@ -260,7 +260,7 @@
     </com.dsc.nana.domain.form.InputElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="52">
       <caption>btn5 供应商</caption>
-      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:304px;font-weight:normal;top:128px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:304px;font-weight:normal;top:128px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="53">
@@ -315,7 +315,7 @@
         <value>0</value>
       </dataType>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:210px;font-weight:normal;top:310px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:210px;font-weight:normal;top:310px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="61">
@@ -364,7 +364,7 @@
       <textValue></textValue>
       <dataType reference="60"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:370px;font-weight:normal;top:310px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:370px;font-weight:normal;top:310px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="66">
@@ -415,7 +415,7 @@
       <textValue></textValue>
       <dataType reference="60"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:530px;font-weight:normal;top:310px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:530px;font-weight:normal;top:310px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="72">
@@ -466,7 +466,7 @@
       <textValue></textValue>
       <dataType reference="60"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:690px;font-weight:normal;top:310px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:690px;font-weight:normal;top:310px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="78">
@@ -517,7 +517,7 @@
       <textValue></textValue>
       <dataType reference="60"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:850px;font-weight:normal;top:310px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:850px;font-weight:normal;top:310px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="84">
@@ -570,7 +570,7 @@
       <textValue></textValue>
       <dataType reference="45"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:162px;background-color:#ffffff;left:1010px;font-weight:normal;top:310px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:162px;font-style:normal;font-size:12px;background-color:#ffffff;left:1010px;font-weight:normal;top:310px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="91">
@@ -605,7 +605,7 @@
     </com.dsc.nana.domain.form.InputElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="96">
       <caption>btn6 客户</caption>
-      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:560px;font-weight:normal;top:128px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:560px;font-weight:normal;top:128px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="97">
@@ -658,7 +658,7 @@
       <textValue></textValue>
       <dataType reference="45"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:50px;font-weight:normal;top:280px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:50px;font-weight:normal;top:280px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="104">
@@ -713,7 +713,7 @@
         <value>0</value>
       </dataType>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:210px;font-weight:normal;top:280px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:210px;font-weight:normal;top:280px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="112">
@@ -764,7 +764,7 @@
       <textValue></textValue>
       <dataType reference="111"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:370px;font-weight:normal;top:280px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:370px;font-weight:normal;top:280px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="118">
@@ -815,7 +815,7 @@
       <textValue></textValue>
       <dataType reference="111"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:530px;font-weight:normal;top:280px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:530px;font-weight:normal;top:280px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="124">
@@ -866,7 +866,7 @@
       <textValue></textValue>
       <dataType reference="111"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:690px;font-weight:normal;top:280px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:690px;font-weight:normal;top:280px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="130">
@@ -917,7 +917,7 @@
       <textValue></textValue>
       <dataType reference="111"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:850px;font-weight:normal;top:280px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:850px;font-weight:normal;top:280px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="136">
@@ -970,7 +970,7 @@
       <textValue></textValue>
       <dataType reference="45"/>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:160px;font-style:normal;font-size:12px;background-color:#ffffff;left:1010px;font-weight:normal;top:280px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:160px;background-color:#ffffff;left:1010px;font-weight:normal;top:280px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="143">
@@ -1005,7 +1005,7 @@
     </com.dsc.nana.domain.form.InputElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="148">
       <caption>btn7 料号</caption>
-      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:48px;font-weight:normal;top:160px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:48px;font-weight:normal;top:160px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="149">
@@ -1040,7 +1040,7 @@
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="154">
       <caption>btn8 工艺路线</caption>
-      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:304px;font-weight:normal;top:160px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:304px;font-weight:normal;top:160px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="155">
@@ -1075,7 +1075,7 @@
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="160">
       <caption>btn9 库位</caption>
-      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:560px;font-weight:normal;top:160px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:560px;font-weight:normal;top:160px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="161">
@@ -1110,7 +1110,7 @@
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="166">
       <caption>btn10 料件主分群码</caption>
-      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:48px;font-weight:normal;top:192px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:48px;font-weight:normal;top:192px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="167">
@@ -1145,7 +1145,7 @@
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="172">
       <caption>btn11 员工</caption>
-      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:304px;font-weight:normal;top:192px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:304px;font-weight:normal;top:192px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="173">
@@ -1180,7 +1180,7 @@
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="178">
       <caption>btn12 订单信息</caption>
-      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:560px;font-weight:normal;top:192px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:560px;font-weight:normal;top:192px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="179">
@@ -1217,7 +1217,7 @@
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="185">
       <caption>btn13...</caption>
-      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:48px;font-weight:normal;top:224px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:48px;font-weight:normal;top:224px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="186">
@@ -1252,7 +1252,7 @@
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="191">
       <caption>btn14...</caption>
-      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:304px;font-weight:normal;top:224px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:304px;font-weight:normal;top:224px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="192">
@@ -1287,7 +1287,7 @@
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="197">
       <caption>btn15...</caption>
-      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:560px;font-weight:normal;top:224px;</cssStyle>
+      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:560px;font-weight:normal;top:224px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="198">
@@ -1349,7 +1349,7 @@
       </appearanceType>
       <isOptional>false</isOptional>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:20px;text-align:left;color:#000000;width:227px;font-style:normal;font-size:12px;background-color:#ffffff;left:703px;font-weight:normal;top:54px;</cssStyle>
+      <cssStyle>position:absolute;height:20px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:227px;background-color:#ffffff;left:703px;font-weight:normal;top:54px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="210">
@@ -1406,7 +1406,7 @@
         <value>0</value>
       </dataType>
       <isHideLabel>false</isHideLabel>
-      <cssStyle>position:absolute;height:27px;text-align:left;color:#000000;width:180px;font-style:normal;font-size:12px;background-color:#ffffff;left:951px;font-weight:normal;top:51px;</cssStyle>
+      <cssStyle>position:absolute;height:27px;color:#000000;text-align:left;font-size:12px;font-style:normal;width:180px;background-color:#ffffff;left:951px;font-weight:normal;top:51px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="219">
@@ -1557,7 +1557,7 @@ function btn3_onclick(){
    lbl7.value=&quot;预计完工日&quot;;
 
     var FileName = &quot;SingleOpenWin&quot;;   
-  var sql = &quot; SELECT 单号,生产料号,品名,本站作业,作业名称,生产数量,预计完工日 FROM V003 &quot;; 
+  var sql = &quot;select a.sfaadocno 单号,a.sfaa010 生产料号,d.imaal003 品名,c.sfcb003 本站作业,e.oocql004 作业名称,b.sfca003 生产数量,TO_CHAR(c.sfcb045, &apos;YYYY-MM-DD&apos;) 预计完工日 from sfaa_t a  left join sfca_t b on b.sfcadocno=a.sfaadocno left join sfcb_t c on c.sfcbdocno=a.sfaadocno  left join imaal_t d on d.imaal001=a.sfaa010 left join oocql_t e on e.oocql002=c.sfcb003 where c.sfcb003 like &apos;T%&apos; &quot;; 
   // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
 
   var SQLClaused = new Array(sql);
@@ -1895,7 +1895,7 @@ FROM V002</statement>
     </com.dsc.nana.domain.form.SqlCommand>
   </sqlCmds>
   <validFrom id="240">2017-03-24 10:15:23.0</validFrom>
-  <version>14</version>
+  <version>15</version>
   <appDesignType id="241">
     <value>-1</value>
   </appDesignType>
@@ -1918,6 +1918,6 @@ return true;
   <dtoState id="242">
     <value>1</value>
   </dtoState>
-  <OID>f08c3814dee9100487a94635dc8ba3d0</OID>
+  <OID>f2b45af4dee9100487a94635dc8ba3d0</OID>
   <objectVersion>1</objectVersion>
 </com.dsc.nana.domain.form.FormDefinition>
