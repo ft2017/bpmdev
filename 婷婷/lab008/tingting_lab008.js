@@ -66,8 +66,25 @@ function btn1_onclick(){
 
 function btn2_onclick(){
   clearTxt();
-    alert("暂无内容");
-    
+    // alert("btn2_onclick");
+   lbl1.value="报工单号";
+   lbl2.value="报工类型";
+   lbl3.value="录单人员";
+   lbl4.value="姓名";
+   lbl5.value="审核日期";
+   lbl6.value="...";
+   lbl7.value="...";
+
+    var FileName = "SingleOpenWin";   
+  var sql = " select UNIQUE(a.sffbdocno) 报工单号,a.sffb001 报工类型,a.sffbcrtid 录单人员,c.ooag011 姓名,TO_CHAR(a.sffbcnfdt, 'YYYY-MM-DD') 审核日期 from sffb_t a left join ooag_t c on c.ooag001=a.sffbcrtid where a.sffbent=11"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("报工单号"," 报工类型","录单人员","姓名","审核日期");//客制开窗的Grid Label
+  var QBEField = new Array("报工单号"," 报工类型","录单人员","姓名","审核日期");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("报工单号"," 报工类型","录单人员","姓名","审核日期");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3","txt4","txt5");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
      
 }
 
@@ -355,6 +372,147 @@ function btn12_onclick(){
      
 }
 
+function btn13_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="客户编号";
+   lbl2.value="客户简称";
+   lbl3.value="公司料号";
+   lbl4.value="品名";
+   lbl5.value="客户料号";
+   lbl6.value="品名";
+   lbl7.value="录入日期";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.pmao001) 客户编号,b.pmaal004 客户简称,a.pmao002 公司料号,c.imaal003 品名,a.pmao004 客户料号,a.pmao009 品名,TO_CHAR(a.pmaocrtdt, 'YYYY-MM-DD') 录入日期 from pmao_t a left join pmaal_t b on b.pmaal001=pmao001 left join imaal_t c on c.imaal001=pmao002 where a.pmaoent=11"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("客户编号"," 客户简称"," 公司料号"," 品名"," 客户料号"," 品名"," 录入日期");//客制开窗的Grid Label
+  var QBEField = new Array("客户编号"," 客户简称"," 公司料号"," 品名"," 客户料号"," 品名"," 录入日期");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("客户编号"," 客户简称"," 公司料号"," 品名"," 客户料号"," 品名"," 录入日期");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3","txt4","txt5","txt6","txt7");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+function btn14_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="用户";
+   lbl2.value="员工编号";
+   lbl3.value="员工姓名";
+   lbl4.value="录入日期";
+   lbl5.value="...";
+   lbl6.value="...";
+   lbl7.value="...";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.gzxa001) 用户,a.gzxa003 员工编号,b.ooag011 员工姓名,TO_CHAR(a.gzxacrtdt) 录入日期 from gzxa_t a left join ooag_t b on b.ooag001=a.gzxa003 where a.gzxaent=11"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("用户"," 员工编号"," 员工姓名"," 录入日期");//客制开窗的Grid Label
+  var QBEField = new Array("用户"," 员工编号"," 员工姓名"," 录入日期");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("用户"," 员工编号"," 员工姓名"," 录入日期");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3","txt4");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+function btn15_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="采购单号";
+   lbl2.value="采购员";
+   lbl3.value="员工姓名";
+   lbl4.value="录入日期";
+   lbl5.value="单据状态";
+   lbl6.value="...";
+   lbl7.value="...";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.pmdldocno) 采购单号,a.pmdl002 采购员,b.ooag011 员工姓名,TO_CHAR(a.pmdlcrtdt) 录入日期,a.pmdlstus 单据状态 from pmdl_t a left join ooag_t b on b.ooag001=a.pmdl002 where a.pmdlent=11 and a.pmdl005=1"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("采购单号"," 采购员"," 员工姓名"," 录入日期"," 单据状态");//客制开窗的Grid Label
+  var QBEField = new Array("采购单号"," 采购员"," 员工姓名"," 录入日期"," 单据状态");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("采购单号"," 采购员"," 员工姓名"," 录入日期"," 单据状态");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3","txt4","txt5");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+function btn16_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="采购单号";
+   lbl2.value="采购员";
+   lbl3.value="员工姓名";
+   lbl4.value="录入日期";
+   lbl5.value="单据状态";
+   lbl6.value="...";
+   lbl7.value="...";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.pmdldocno) 采购单号,a.pmdl002 采购员,b.ooag011 员工姓名,TO_CHAR(a.pmdlcrtdt) 录入日期,a.pmdlstus 单据状态 from pmdl_t a left join ooag_t b on b.ooag001=a.pmdl002 where a.pmdlent=11 and a.pmdl005=2"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("采购单号"," 采购员"," 员工姓名"," 录入日期"," 单据状态");//客制开窗的Grid Label
+  var QBEField = new Array("采购单号"," 采购员"," 员工姓名"," 录入日期"," 单据状态");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("采购单号"," 采购员"," 员工姓名"," 录入日期"," 单据状态");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3","txt4","txt5");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+function btn17_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="料号";
+   lbl2.value="品名";
+   lbl3.value="库位";
+   lbl4.value="批号";
+   lbl5.value="账面库存";
+   lbl6.value="...";
+   lbl7.value="...";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.inag001) 料号,b.IMAAL003 品名,a.inag004 库位,a.inag006 批号,a.inag008 账面库存 from inag_t a left join imaal_t b on b.imaal001=a.inag001 where a.inagent=11"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("料号"," 品名"," 库位"," 批号"," 账面库存");//客制开窗的Grid Label
+  var QBEField = new Array("料号"," 品名"," 库位"," 批号"," 账面库存");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("料号"," 品名"," 库位"," 批号"," 账面库存");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3","txt4","txt5");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+
 
 //供应商性质单选
 function radio_onclick(){    //radiobutton控件取值
@@ -368,23 +526,23 @@ function radio_onclick(){    //radiobutton控件取值
 
 
 
-function btn15_onclick(){
-// alert("btn15_onclick");
+// function btn15_onclick(){
+// // alert("btn15_onclick");
 
-clearTxt();
+// clearTxt();
 
-if (txtRadio.value==0){
+// if (txtRadio.value==0){
 
-  alert("选择环境值的代码为0");
-}
-if (txtRadio.value==1){
+//   alert("选择环境值的代码为0");
+// }
+// if (txtRadio.value==1){
 
-  alert("选择环境值的代码为1");
-}
-}
-function formCreate(){
-return true;
-}
+//   alert("选择环境值的代码为1");
+// }
+// }
+// function formCreate(){
+// return true;
+// }
 function formOpen(){
 
   txtRadio.value=0;//实际值
