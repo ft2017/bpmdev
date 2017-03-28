@@ -265,7 +265,7 @@ function btn10_onclick(){
 
    lbl1.value="主分群码";
    lbl2.value="说明";
-   lbl3.value="审核日";
+   lbl3.value="审核日期";
    lbl4.value="...";
    lbl5.value="...";
    lbl6.value="...";
@@ -314,6 +314,37 @@ function btn11_onclick(){
   singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
      
 }
+
+
+function btn12_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="订单号";
+   lbl2.value="订单日期";
+   lbl3.value="业务人员";
+   lbl4.value="姓名";
+   lbl5.value="客户编号";
+   lbl6.value="客户名称";
+   lbl7.value="...";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.xmdadocno) 订单号,TO_CHAR(a.xmdadocdt, 'YYYY-MM-DD') 订单日期,a.xmda002 业务人员,c.ooag011 姓名,a.xmda004 客户编号,b.PMAAL003 客户名称 from xmda_t a left join pmaal_t b on b.PMAAL001=a.XMDA004 left join ooag_t c on c.ooag001=a.xmda002 where a.xmdaent=11"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("订单号"," 订单日期"," 业务人员"," 姓名"," 客户编号"," 客户名称");//客制开窗的Grid Label
+  var QBEField = new Array("订单号"," 订单日期"," 业务人员"," 姓名"," 客户编号"," 客户名称");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("订单号"," 订单日期"," 业务人员"," 姓名"," 客户编号"," 客户名称");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3","txt4","txt5","txt6");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+
 
 
 
