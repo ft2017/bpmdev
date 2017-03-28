@@ -17,6 +17,7 @@ var lbl4 = document.getElementById("lbl4");
 var lbl5 = document.getElementById("lbl5");
 var lbl6 = document.getElementById("lbl6");
 var lbl7 = document.getElementById("lbl7");
+var txtRadio = document.getElementById("txtRadio");//实际值
 
 function clearTxt(){
   val=""
@@ -350,7 +351,7 @@ function radio_onclick(){    //radiobutton控件取值
   var Rb_frb = document.getElementsByName("radio");
   for(var i = 0 ;i<Rb_frb.length;i++){
        if(Rb_frb[i].checked){
-        document.getElementById("txtRadio").value=Rb_frb[i].value;//实际值
+        txtRadio.value=Rb_frb[i].value;//实际值
           }      
     }
 }
@@ -361,12 +362,23 @@ function btn15_onclick(){
 // alert("btn15_onclick");
 
 clearTxt();
+
+if (txtRadio.value==0){
+
+  alert("选择环境值的代码为0");
+}
+if (txtRadio.value==1){
+
+  alert("选择环境值的代码为1");
+}
 }
 function formCreate(){
 return true;
 }
 function formOpen(){
-  document.getElementById("txtRadio").value=0;//实际值
+
+  txtRadio.value=0;//实际值
+  alert("选择环境值的代码为"+txtRadio.value);
 return true;
 }
 function formSave(){
