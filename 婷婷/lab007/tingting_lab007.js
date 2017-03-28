@@ -3,7 +3,8 @@ document.write('<script type="text/javascript" src="../../CustomJsLib/EFGPShareM
 
 //数据库链接
 var databaseCfgId_EFGP = "EFGPTEST";   //办公用品
-var ds2 = "T100TEST";   //查询T100
+var ds2 = "T100TEST";   //查询T100测试环境
+var ds3 = "T100PROD";   //查询T100正式环境
 
 // 2017-03-27准备设置一个通用的标签
 // var lble1 = document.getElementById("lble1");
@@ -172,6 +173,151 @@ function btn6_onclick(){
   singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
      
 }
+
+
+function btn7_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="料号";
+   lbl2.value="品名";
+   lbl3.value="审核日期";
+   lbl4.value="...";
+   lbl5.value="...";
+   lbl6.value="...";
+   lbl7.value="...";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.imaa001) 料号,b.imaal003 品名,TO_CHAR(a.imaacnfdt, 'YYYY-MM-DD') 审核日期 from imaa_t a left join  imaal_t b on b.imaal001=a.imaa001 where  a.imaaent=11"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("料号"," 品名","审核日期");//客制开窗的Grid Label
+  var QBEField = new Array("料号"," 品名","审核日期");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("料号"," 品名","审核日期");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+function btn8_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="审核日期";
+   lbl2.value="品名";
+   lbl3.value="工艺编号";
+   lbl4.value="说明";
+   lbl5.value="审核日期";
+   lbl6.value="...";
+   lbl7.value="...";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.ecba001) 工艺料号,b.imaal003 品名,a.ecba002 工艺编号,a.ecba003 说明,TO_CHAR(a.ecbacnfdt, 'YYYY-MM-DD') 审核日期 from ecba_t a, imaal_t b where b.imaal001=a.ecba001 and  ecbaent=11"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("审核日期"," 品名"," 工艺编号"," 说明","审核日期");//客制开窗的Grid Label
+  var QBEField = new Array("工艺料号"," 品名"," 工艺编号"," 说明","审核日期");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("工艺料号"," 品名"," 工艺编号"," 说明","审核日期");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3","txt4","txt5");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+function btn9_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="库位编号";
+   lbl2.value="库位名称";
+   lbl3.value="库位管控";
+   lbl4.value="录入日期";
+   lbl5.value="...";
+   lbl6.value="...";
+   lbl7.value="...";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.inaa001) 库位编号,b.inayl003 库位名称,a.inaa007 库位管控,TO_CHAR(a.inaacrtdt, 'YYYY-MM-DD') 录入日期 from inaa_t a left join inayl_t b on b.INAYL001=a.inaa001 where  a.inaaent=11"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("库位编号"," 库位名称"," 库位管控"," 录入日期");//客制开窗的Grid Label
+  var QBEField = new Array("库位编号"," 库位名称"," 库位管控"," 录入日期");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("库位编号"," 库位名称"," 库位管控"," 录入日期");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3","txt4");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+function btn10_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="主分群码";
+   lbl2.value="审核日期";
+   lbl3.value="...";
+   lbl4.value="...";
+   lbl5.value="...";
+   lbl6.value="...";
+   lbl7.value="...";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.imca001) 主分群码,b.oocql004,TO_CHAR(a.imcacrtdt, 'YYYY-MM-DD') 审核日期  from imca_t a left join oocql_t b on b.oocql002=a.imca001 where  a.imcaent=11 "; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("主分群码"," 审核日期");//客制开窗的Grid Label
+  var QBEField = new Array("主分群码"," 审核日期");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("主分群码"," 审核日期");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+function btn11_onclick(){
+  clearTxt();
+    // alert("btn2_onclick");
+
+   lbl1.value="员工编号";
+   lbl2.value="全名";
+   lbl3.value="归属部门";
+   lbl4.value="录入日期";
+   lbl5.value="...";
+   lbl6.value="...";
+   lbl7.value="...";
+   // alert("lbl1.value="+lbl1.value);
+
+
+
+    var FileName = "SingleOpenWin";   
+  var sql = "select UNIQUE(a.ooag001) 员工编号,a.ooag011 全名,a.ooag003 归属部门,TO_CHAR(a.ooagcrtdt, 'YYYY-MM-DD') 录入日期  from ooag_t a where  a.ooagent=11"; 
+  // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("员工编号"," 全名"," 归属部门"," 录入日期");//客制开窗的Grid Label
+  var QBEField = new Array("员工编号"," 全名"," 归属部门"," 录入日期");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("员工编号"," 全名"," 归属部门"," 录入日期");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3","txt4");//表单上的栏位代号
+  singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+     
+}
+
+
+
+
 function btn15_onclick(){
 // alert("btn15_onclick");
 
