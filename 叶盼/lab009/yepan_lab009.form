@@ -4,7 +4,7 @@
     <bundleClass>com.dsc.nana.domain.form.FormDefinition</bundleClass>
   </bundleContainer>
   <containerOID>55555029deea100487a94635dc8ba3d0</containerOID>
-  <createdTime id="3">2017-03-28 15:37:03.028</createdTime>
+  <createdTime id="3">2017-03-28 16:16:27.867</createdTime>
   <dataAccessDefinitions class="list" id="4"/>
   <description></description>
   <EleCountForDesigner>0</EleCountForDesigner>
@@ -1414,8 +1414,8 @@
       <validationRules class="list" id="226"/>
     </com.dsc.nana.domain.form.TriggerElementDefinition>
     <com.dsc.nana.domain.form.TriggerElementDefinition id="227">
-      <caption>btn18...</caption>
-      <cssStyle>position:absolute;height:32px;color:#000000;text-align:center;font-size:16px;font-style:normal;width:256px;background-color:#ffffff;left:560px;font-weight:normal;top:320px;</cssStyle>
+      <caption>btn18工单信息</caption>
+      <cssStyle>position:absolute;height:32px;text-align:center;color:#000000;width:256px;font-style:normal;font-size:16px;background-color:#ffffff;left:560px;font-weight:normal;top:320px;</cssStyle>
       <cssDevice reference="7"/>
       <description></description>
       <elementStyles class="list" id="228">
@@ -1431,7 +1431,7 @@
           <readonlyBackgroundColor>16777215</readonlyBackgroundColor>
           <coordinateX>560</coordinateX>
           <coordinateY>320</coordinateY>
-          <alignType reference="187"/>
+          <alignType reference="18"/>
           <rwdRowIndex>-1</rwdRowIndex>
           <rwdColumnIndex>-1</rwdColumnIndex>
           <rwdContainer></rwdContainer>
@@ -1815,24 +1815,14 @@ function btn17_onclick() {
     return true;   
 }
 
-
-
-
-
 function btn18_onclick() {
-    // alert(&quot;btn15_onclick&quot;);
-
-    clearTxt();
-
-    if (txtRadio.value == 0) {
-
-        alert(&quot;选择环境值的代码为0&quot;);
-    }
-    if (txtRadio.value == 1) {
-
-        alert(&quot;选择环境值的代码为1&quot;);
-    }
+    lbl= new Array(&quot;工单号&quot;, &quot; 生产料号&quot;, &quot; 品名&quot;, &quot; 生产数量&quot;, &quot; 录入日期&quot;);
+    var sql = &quot;select a.sfaadocno 工单号,a.sfaa010 生产料号,b.imaal003 品名,a.sfaa012 生产数量,TO_CHAR(a.sfaadocdt, &apos;YYYY-MM-DD&apos;) 录入日期 from sfaa_t a left join imaal_t b on b.imaal001=a.sfaa010 where a.sfaaent=11&quot;;
+    btn_core(lbl,sql);
+    return true;   
 }
+
+
 
 
 
@@ -1904,7 +1894,7 @@ FROM V002</statement>
     </com.dsc.nana.domain.form.SqlCommand>
   </sqlCmds>
   <validFrom id="263">2017-03-24 10:15:23.0</validFrom>
-  <version>1</version>
+  <version>2</version>
   <appDesignType id="264">
     <value>-1</value>
   </appDesignType>
@@ -1927,6 +1917,6 @@ return true;
   <dtoState id="265">
     <value>1</value>
   </dtoState>
-  <OID>55555028deea100487a94635dc8ba3d0</OID>
+  <OID>636f2170deea100487a94635dc8ba3d0</OID>
   <objectVersion>1</objectVersion>
 </com.dsc.nana.domain.form.FormDefinition>

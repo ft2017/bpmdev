@@ -227,24 +227,14 @@ function btn17_onclick() {
     return true;   
 }
 
-
-
-
-
 function btn18_onclick() {
-    // alert("btn15_onclick");
-
-    clearTxt();
-
-    if (txtRadio.value == 0) {
-
-        alert("选择环境值的代码为0");
-    }
-    if (txtRadio.value == 1) {
-
-        alert("选择环境值的代码为1");
-    }
+    lbl= new Array("工单号", " 生产料号", " 品名", " 生产数量", " 录入日期");
+    var sql = "select a.sfaadocno 工单号,a.sfaa010 生产料号,b.imaal003 品名,a.sfaa012 生产数量,TO_CHAR(a.sfaadocdt, 'YYYY-MM-DD') 录入日期 from sfaa_t a left join imaal_t b on b.imaal001=a.sfaa010 where a.sfaaent=11";
+    btn_core(lbl,sql);
+    return true;   
 }
+
+
 
 
 
