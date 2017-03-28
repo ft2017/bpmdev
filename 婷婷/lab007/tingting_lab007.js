@@ -93,7 +93,17 @@ function btn3_onclick(){
   var QBELabel = new Array("单号","生产料号","品名","本站作业","作业名称","生产数量","预计完工日");//模糊查询的Label
      var ReturnId = new Array("txt1","txt2","txt3","txt4","txt5","txt6","txt7");//表单上的栏位代号
   singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
-     
+//  if (txtRadio.value==0){
+
+//   alert("选择环境值的代码为0，正式环境");
+//   singleOpenWin(FileName, ds3, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+// }
+// if (txtRadio.value==1){
+
+//   alert("选择环境值的代码为1"，测试环境);
+//   singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+// }
+   
 }
 
 
