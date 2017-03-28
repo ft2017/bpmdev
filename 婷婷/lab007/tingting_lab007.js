@@ -264,8 +264,8 @@ function btn10_onclick(){
     // alert("btn2_onclick");
 
    lbl1.value="主分群码";
-   lbl2.value="审核日期";
-   lbl3.value="...";
+   lbl2.value="说明";
+   lbl3.value="审核日";
    lbl4.value="...";
    lbl5.value="...";
    lbl6.value="...";
@@ -275,14 +275,14 @@ function btn10_onclick(){
 
 
     var FileName = "SingleOpenWin";   
-  var sql = "select UNIQUE(a.imca001) 主分群码,b.oocql004,TO_CHAR(a.imcacrtdt, 'YYYY-MM-DD') 审核日期  from imca_t a left join oocql_t b on b.oocql002=a.imca001 where  a.imcaent=11 "; 
+  var sql = "select UNIQUE(a.imca001) 主分群码,b.oocql004 说明,TO_CHAR(a.imcacrtdt, 'YYYY-MM-DD') 审核日期  from imca_t a left join oocql_t b on b.oocql002=a.imca001 where  a.imcaent=11  order by a.imca001"; 
   // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
 
   var SQLClaused = new Array(sql);
-  var SQLLabel = new Array("主分群码"," 审核日期");//客制开窗的Grid Label
-  var QBEField = new Array("主分群码"," 审核日期");//模糊查询,須和DB Table栏位名称相同
-  var QBELabel = new Array("主分群码"," 审核日期");//模糊查询的Label
-    var ReturnId = new Array("txt1","txt2");//表单上的栏位代号
+  var SQLLabel = new Array("主分群码"," 说明"," 审核日期");//客制开窗的Grid Label
+  var QBEField = new Array("主分群码"," 说明"," 审核日期");//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array("主分群码"," 说明"," 审核日期");//模糊查询的Label
+    var ReturnId = new Array("txt1","txt2","txt3");//表单上的栏位代号
   singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
      
 }

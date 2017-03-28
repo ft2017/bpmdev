@@ -4,7 +4,7 @@
     <bundleClass>com.dsc.nana.domain.form.FormDefinition</bundleClass>
   </bundleContainer>
   <containerOID>c1369475dee9100487a94635dc8ba3d0</containerOID>
-  <createdTime id="3">2017-03-28 08:44:35.394</createdTime>
+  <createdTime id="3">2017-03-28 09:40:59.695</createdTime>
   <dataAccessDefinitions class="list" id="4"/>
   <description></description>
   <EleCountForDesigner>0</EleCountForDesigner>
@@ -1614,8 +1614,8 @@ function btn10_onclick(){
     // alert(&quot;btn2_onclick&quot;);
 
    lbl1.value=&quot;主分群码&quot;;
-   lbl2.value=&quot;审核日期&quot;;
-   lbl3.value=&quot;...&quot;;
+   lbl2.value=&quot;说明&quot;;
+   lbl3.value=&quot;审核日&quot;;
    lbl4.value=&quot;...&quot;;
    lbl5.value=&quot;...&quot;;
    lbl6.value=&quot;...&quot;;
@@ -1625,14 +1625,14 @@ function btn10_onclick(){
 
 
     var FileName = &quot;SingleOpenWin&quot;;   
-  var sql = &quot;select UNIQUE(a.imca001) 主分群码,b.oocql004,TO_CHAR(a.imcacrtdt, &apos;YYYY-MM-DD&apos;) 审核日期  from imca_t a left join oocql_t b on b.oocql002=a.imca001 where  a.imcaent=11 &quot;; 
+  var sql = &quot;select UNIQUE(a.imca001) 主分群码,b.oocql004 说明,TO_CHAR(a.imcacrtdt, &apos;YYYY-MM-DD&apos;) 审核日期  from imca_t a left join oocql_t b on b.oocql002=a.imca001 where  a.imcaent=11  order by a.imca001&quot;; 
   // 单号 生产料号  品名  本站作业  作业名称  生产数量  预计完工日
 
   var SQLClaused = new Array(sql);
-  var SQLLabel = new Array(&quot;主分群码&quot;,&quot; 审核日期&quot;);//客制开窗的Grid Label
-  var QBEField = new Array(&quot;主分群码&quot;,&quot; 审核日期&quot;);//模糊查询,須和DB Table栏位名称相同
-  var QBELabel = new Array(&quot;主分群码&quot;,&quot; 审核日期&quot;);//模糊查询的Label
-    var ReturnId = new Array(&quot;txt1&quot;,&quot;txt2&quot;);//表单上的栏位代号
+  var SQLLabel = new Array(&quot;主分群码&quot;,&quot; 说明&quot;,&quot; 审核日期&quot;);//客制开窗的Grid Label
+  var QBEField = new Array(&quot;主分群码&quot;,&quot; 说明&quot;,&quot; 审核日期&quot;);//模糊查询,須和DB Table栏位名称相同
+  var QBELabel = new Array(&quot;主分群码&quot;,&quot; 说明&quot;,&quot; 审核日期&quot;);//模糊查询的Label
+    var ReturnId = new Array(&quot;txt1&quot;,&quot;txt2&quot;,&quot;txt3&quot;);//表单上的栏位代号
   singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
      
 }
@@ -1710,7 +1710,7 @@ FROM V002</statement>
     </com.dsc.nana.domain.form.SqlCommand>
   </sqlCmds>
   <validFrom id="217">2017-03-24 10:15:23.0</validFrom>
-  <version>2</version>
+  <version>4</version>
   <appDesignType id="218">
     <value>-1</value>
   </appDesignType>
@@ -1733,6 +1733,6 @@ return true;
   <dtoState id="219">
     <value>1</value>
   </dtoState>
-  <OID>c1d4cb30dee9100487a94635dc8ba3d0</OID>
+  <OID>d600d61cdee9100487a94635dc8ba3d0</OID>
   <objectVersion>1</objectVersion>
 </com.dsc.nana.domain.form.FormDefinition>
