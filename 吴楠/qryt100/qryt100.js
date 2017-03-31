@@ -237,7 +237,7 @@ function btn14_onclick() {
 function btn15_onclick() {
 
     lbl = new Array("采购单号", " 采购员", " 员工姓名", " 录入日期", " 单据状态");
-    var sql = "select UNIQUE(a.pmdldocno) 采购单号,a.pmdl002 采购员,b.ooag011 员工姓名,TO_CHAR(a.pmdlcrtdt) 录入日期,a.pmdlstus 单据状态 from pmdl_t a left join ooag_t b on b.ooag001=a.pmdl002 where a.pmdlent=11 and a.pmdl005=1";
+    var sql = "select UNIQUE(a.pmdldocno) 采购单号,a.pmdl002 采购员,b.ooag011 员工姓名,TO_CHAR(a.pmdlcrtdt,'YYYY-MM-DD') 录入日期,a.pmdlstus 单据状态 from pmdl_t a left join ooag_t b on b.ooag001=a.pmdl002 where a.pmdlent=11 and a.pmdl005=1";
     btn_core(lbl, sql);
     return true;
 
@@ -247,7 +247,7 @@ function btn15_onclick() {
 function btn16_onclick() {
 
     lbl = new Array("采购单号", " 采购员", " 员工姓名", " 录入日期", " 单据状态");
-    var sql = "select UNIQUE(a.pmdldocno) 采购单号,a.pmdl002 采购员,b.ooag011 员工姓名,TO_CHAR(a.pmdlcrtdt) 录入日期,a.pmdlstus 单据状态 from pmdl_t a left join ooag_t b on b.ooag001=a.pmdl002 where a.pmdlent=11 and a.pmdl005=2";
+    var sql = "select UNIQUE(a.pmdldocno) 采购单号,a.pmdl002 采购员,b.ooag011 员工姓名,TO_CHAR(a.pmdlcrtdt,'YYYY-MM-DD') 录入日期,a.pmdlstus 单据状态 from pmdl_t a left join ooag_t b on b.ooag001=a.pmdl002 where a.pmdlent=11 and a.pmdl005=2";
     btn_core(lbl, sql);
     return true;
 }
