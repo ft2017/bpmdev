@@ -6,6 +6,12 @@ var databaseCfgId_EFGP = "EFGPTEST"; //办公用品
 var ds2 = "T100TEST"; //查询T100测试环境
 var ds3 = "T100PROD"; //查询T100正式环境
 
+
+var dsBpmTest = "BPMTEST"; //查询T100测试环境
+var dsBpmProd = "BPMPROD"; //查询T100正式环境
+var dsT100Test = "T100TEST"; //查询T100测试环境
+var dsT100Prod = "T100PROD"; //查询T100正式环境
+
 // 2017-03-27准备设置一个通用的标签
 // var lble1 = document.getElementById("lble1");
 // var lble2 = document.getElementById("lble2");
@@ -43,9 +49,21 @@ function clearTxt() {
 
 }
 
-
+function btn19_onclick() {
+    // alert("btn19_onclick")
+   lbl = new Array("DEPT_ID", "DEPT_NAME", "EMPE_ID","EMPE_NAME","JOB","LEAVE_DATE","SUP_NAME");
+    var sql = " select a.DEPT_ID,a.DEPT_NAME,a.EMPE_ID,a.EMPE_NAME,a.JOB,a.LEAVE_DATE,a.SUP_NAME from V_EMPE a  ";
+     btn_core_bpm(lbl, sql);
+    return true;
+}
 
 function btn1_onclick() {
+   lbl = new Array("品名", "规格", "单位");
+    var sql = " select BGYPNAME,BGYPSPEC,BGYPUOM from Z_BGYP  ";
+     btn_core_bpm(lbl, sql);
+    return true;
+
+    // 
     clearTxt();
     // alert("婷婷1btn_bgyp_onclick");
     lbl1.value = "品名";
@@ -63,7 +81,8 @@ function btn1_onclick() {
     var QBEField = new Array("BGYPNAME", "BGYPSPEC", "BGYPUOM"); //模糊查询,須和DB Table栏位名称相同
     var QBELabel = new Array("品名", "规格", "单位"); //模糊查询的Label
     var ReturnId = new Array("txt1", "txt2", "txt3", ); //表单上的栏位代号
-    singleOpenWin(FileName, databaseCfgId_EFGP, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+    //singleOpenWin(FileName, databaseCfgId_EFGP, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+    singleOpenWin(FileName, dsBpmTest, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
 
 }
 
@@ -129,11 +148,65 @@ function btn_core(lbl, sql) {
 
     if (txtRadio.value == 0) {
         // alert("*** 正式环境 ***");
-        singleOpenWin(FileName, ds3, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+        // singleOpenWin(FileName, ds3, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+        singleOpenWin(FileName, dsT100Prod, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
     }
     if (txtRadio.value == 1) {
         // alert("--- 测试环境 ---");
-        singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+        // singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+        
+        singleOpenWin(FileName, dsT100Test, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+        
+    }
+    // alert("end of core");
+}
+
+
+function btn_core_bpm(lbl, sql) {
+    clearTxt(); //清畫面
+    //table th
+    if (lbl.length >= 1) lbl1.value = lbl[0];
+    if (lbl.length >= 2) lbl2.value = lbl[1];
+    if (lbl.length >= 3) lbl3.value = lbl[2];
+    if (lbl.length >= 4) lbl4.value = lbl[3];
+    if (lbl.length >= 5) lbl5.value = lbl[4];
+    if (lbl.length >= 6) lbl6.value = lbl[5];
+    if (lbl.length >= 7) lbl7.value = lbl[6];
+
+    // T100 BPM 要求的樣式
+    var FileName = "SingleOpenWin";
+    var SQLClaused = new Array(sql);
+    var SQLLabel = lbl; //客制开窗的Grid Label
+    var QBEField = lbl; //模糊查询,須和DB Table栏位名称相同
+    var QBELabel = lbl; //模糊查询的Label
+
+    if (lbl.length == 3) {
+        var ReturnId = new Array("txt1", "txt2", "txt3");
+    }
+    if (lbl.length == 4) {
+        var ReturnId = new Array("txt1", "txt2", "txt3", "txt4");
+    }
+    if (lbl.length == 5) {
+        var ReturnId = new Array("txt1", "txt2", "txt3", "txt4", "txt5");
+    }
+    if (lbl.length == 6) {
+        var ReturnId = new Array("txt1", "txt2", "txt3", "txt4", "txt5", "txt6");
+    }
+    if (lbl.length == 7) {
+        var ReturnId = new Array("txt1", "txt2", "txt3", "txt4", "txt5", "txt6", "txt7");
+    }
+
+    if (txtRadio.value == 0) {
+        // alert("*** 正式环境 ***");
+        // singleOpenWin(FileName, ds3, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+        singleOpenWin(FileName, dsBpmProd, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+    }
+    if (txtRadio.value == 1) {
+        // alert("--- 测试环境 ---");
+        // singleOpenWin(FileName, ds2, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+        
+        singleOpenWin(FileName, dsBpmTest, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+        
     }
     // alert("end of core");
 }
@@ -226,7 +299,7 @@ function btn13_onclick() {
 function btn14_onclick() {
 
     lbl = new Array("用户", " 员工编号", " 员工姓名", " 录入日期");
-    var sql = "select UNIQUE(a.gzxa001) 用户,a.gzxa003 员工编号,b.ooag011 员工姓名,TO_CHAR(a.gzxacrtdt) 录入日期 from gzxa_t a left join ooag_t b on b.ooag001=a.gzxa003 where a.gzxaent=11";
+    var sql = "select UNIQUE(a.gzxa001) 用户,a.gzxa003 员工编号,b.ooag011 员工姓名,TO_CHAR(a.gzxacrtdt,'YYYY-MM-DD') 录入日期 from gzxa_t a left join ooag_t b on b.ooag001=a.gzxa003 where a.gzxaent=11";
     btn_core(lbl, sql);
     return true;
 
@@ -350,6 +423,7 @@ function btnRun_onclick(){
 	 if (selectId==16) btn16_onclick();
     if (selectId==17) btn17_onclick();
     if (selectId==18) btn18_onclick();
+    if (selectId==19) btn19_onclick();
 	
 
 }
