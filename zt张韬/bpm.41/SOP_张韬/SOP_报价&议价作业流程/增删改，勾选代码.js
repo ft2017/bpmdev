@@ -1,7 +1,7 @@
 function formCreate(){
 
-		document.getElementById("txtDate").value=systemDateTime;
-	
+     document.getElementById("txt11").value = userName;
+  
 return true;
 }
 function formOpen(){
@@ -25,40 +25,40 @@ function cblcxgbmhq_onclick(){
    }
     if(tCheckbox[1].checked){ 
       document.getElementById("hdnmj").value='100306';  
-	  //tSelectedValue = document.getElementById("hdnmj").value +";";
+    //tSelectedValue = document.getElementById("hdnmj").value +";";
     }else{
-		 document.getElementById("hdnmj").value = ""; 
-	 }
-	 if(tCheckbox[2].checked){   
+     document.getElementById("hdnmj").value = ""; 
+   }
+   if(tCheckbox[2].checked){   
       document.getElementById("hdnyz").value='100301';   
-	  //tSelectedValue = tSelectedValue + document.getElementById("hdnyz").value+";";
+    //tSelectedValue = tSelectedValue + document.getElementById("hdnyz").value+";";
     }else{
-		 document.getElementById("hdnyz").value = ""; 
-	 }
-	 if(tCheckbox[3].checked){   
+     document.getElementById("hdnyz").value = ""; 
+   }
+   if(tCheckbox[3].checked){   
       document.getElementById("hdnjg").value='100302';
-	 // tSelectedValue = tSelectedValue + document.getElementById("hdnjg").value+";";
+   // tSelectedValue = tSelectedValue + document.getElementById("hdnjg").value+";";
     }else{
-		 document.getElementById("hdnjg").value = ""; 
-	 }
-	 if(tCheckbox[4].checked){   
+     document.getElementById("hdnjg").value = ""; 
+   }
+   if(tCheckbox[4].checked){   
       document.getElementById("hdnsg").value='100305';   
-	  // tSelectedValue = tSelectedValue + document.getElementById("hdnsg").value+";";
+    // tSelectedValue = tSelectedValue + document.getElementById("hdnsg").value+";";
     }else{
-		 document.getElementById("hdnsg").value = ""; 
-	 }
-	 if(tCheckbox[5].checked){   
+     document.getElementById("hdnsg").value = ""; 
+   }
+   if(tCheckbox[5].checked){   
       document.getElementById("hdnpg").value='1008';  
-	 // tSelectedValue = tSelectedValue + document.getElementById("hdnpg").value+";";
+   // tSelectedValue = tSelectedValue + document.getElementById("hdnpg").value+";";
     }else{
-		 document.getElementById("hdnpg").value = ""; 
-	 }
-	 if(tCheckbox[6].checked){   
+     document.getElementById("hdnpg").value = ""; 
+   }
+   if(tCheckbox[6].checked){   
       document.getElementById("hdnzc").value='100701';   
-	  //tSelectedValue = tSelectedValue + document.getElementById("hdnzc").value+";";
+    //tSelectedValue = tSelectedValue + document.getElementById("hdnzc").value+";";
     }else{
-		 document.getElementById("hdnzc").value = ""; 
-	 }
+     document.getElementById("hdnzc").value = ""; 
+   }
   } 
 
 document.getElementById("HiddenTextField0").value = tSelectedValue;
