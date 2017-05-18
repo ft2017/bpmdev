@@ -1,0 +1,183 @@
+﻿1.BOM
+select UNIQUE(a.bmaa001) 主件料号,b.imaal003 品名,
+TO_CHAR(a.bmaacnfdt, 'YYYY-MM-DD') 审核日期 from bmaa_t a,  imaal_t b WHERE b.imaal001=a.bmaa001 and a.bmaaent=11
+2.客户
+select UNIQUE(a.pmaa001) 客户编号,b.pmaal003 客户全名,TO_CHAR(a.pmaacnfdt, 'YYYY-MM-DD') 资料审核日期  from pmaa_t a 
+left join pmaal_t b on b.pmaal001=a.pmaa001
+where a.pmaa002=2 and a.pmaaent=11
+3.供应商
+select UNIQUE( a.pmaa001) 供应商编号,b.pmaal003 供应商全名,TO_CHAR(a.pmaacnfdt, 'YYYY-MM-DD') 资料审核日期  from pmaa_t a 
+left join pmaal_t b on b.pmaal001=a.pmaa001
+where a.pmaa002=1 and a.pmaaent=11
+order by a.pmaa001
+4.料号
+select UNIQUE(a.imaa001) 料号,b.imaal003 品名,TO_CHAR(a.imaacnfdt, 'YYYY-MM-DD') 审核日期 from imaa_t a
+left join  imaal_t b on b.imaal001=a.imaa001 where  a.imaaent=11
+5.工艺路线
+select UNIQUE(a.ecba001) 工艺料号,b.imaal003 品名,a.ecba002 工艺编号,a.ecba003 说明,TO_CHAR(a.ecbacnfdt, 'YYYY-MM-DD') 审核日期 from ecba_t a, imaal_t b where b.imaal001=a.ecba001 and  ecbaent=11
+6.库位
+select UNIQUE(a.inaa001) 库位编号,b.inayl003 库位名称,a.inaa007 库位管控,TO_CHAR(a.inaacrtdt, 'YYYY-MM-DD') 录入日期 from inaa_t a
+left join inayl_t b on b.INAYL001=a.inaa001
+where  a.inaaent=11
+7.料件主分群码
+select UNIQUE(a.imca001) 主分群码,b.oocql004,TO_CHAR(a.imcacrtdt, 'YYYY-MM-DD') 审核日期  from imca_t a
+left join oocql_t b on b.oocql002=a.imca001
+where  a.imcaent=11 
+8.员工
+select UNIQUE(a.ooag001) 员工编号,a.ooag011 全名,a.ooag003 归属部门,TO_CHAR(a.ooagcrtdt, 'YYYY-MM-DD') 录入日期  from ooag_t a
+where  a.ooagent=11 
+9.订单信息
+select UNIQUE(a.xmdadocno) 订单号,TO_CHAR(a.xmdadocdt, 'YYYY-MM-DD') 订单日期,a.xmda002 业务人员,c.ooag011 姓名,a.xmda004 客户编号,b.PMAAL003 客户名称 from xmda_t a
+left join pmaal_t b on b.PMAAL001=a.XMDA004
+left join ooag_t c on c.ooag001=a.xmda002
+where a.xmdaent=11
+10.报工单资料
+select a.sffb005 工单号,a.sffb006 RunCard,a.sffb007 作业编号,e.oocql004 说明,a.sffbdocno 报工单号,a.sffb001 报工类型,d.gzcbl004,a.sffbcrtid 录单人员,c.ooag011 姓名,TO_CHAR(a.sffbcnfdt, 'YYYY-MM-DD') 审核日期 from sffb_t a
+left join ooag_t c on c.ooag001=a.sffbcrtid
+left join gzcbl_t d on d.gzcbl002=a.sffb001 and d.gzcbl001='4020'  and d.gzcbl003='zh_CN'
+left join oocql_t e on e.oocql002=a.sffb007 and e.oocql001='221' and e.oocqlent=11
+order by a.sffbdocno
+11.公司料号与客户料号对照
+select UNIQUE(a.pmao001) 客户编号,b.pmaal004 客户简称,a.pmao002 公司料号,c.imaal003 品名,a.pmao004 客户料号,a.pmao009 品名,TO_CHAR(a.pmaocrtdt, 'YYYY-MM-DD') 录入日期 from pmao_t a
+left join pmaal_t b on b.pmaal001=pmao001
+left join imaal_t c on c.imaal001=pmao002
+where a.pmaoent=11
+12.T100用户
+select UNIQUE(a.gzxa001) 用户,a.gzxa003 员工编号,b.ooag011 员工姓名,TO_CHAR(a.gzxacrtdt, 'YYYY-MM-DD') 录入日期 from gzxa_t a
+left join ooag_t b on b.ooag001=a.gzxa003
+where a.gzxaent=11
+13.采购订单
+select UNIQUE(a.pmdldocno) 采购单号,a.pmdl002 采购员,b.ooag011 员工姓名,TO_CHAR(a.pmdlcrtdt, 'YYYY-MM-DD') 录入日期,a.pmdlstus 单据状态 from pmdl_t a
+left join ooag_t b on b.ooag001=a.pmdl002
+where a.pmdlent=11 and a.pmdl005=1
+14.委外采购
+select UNIQUE(a.pmdldocno) 采购单号,a.pmdl002 采购员,b.ooag011 员工姓名,TO_CHAR(a.pmdlcrtdt, 'YYYY-MM-DD') 录入日期,a.pmdlstus 单据状态 from pmdl_t a
+left join ooag_t b on b.ooag001=a.pmdl002
+where a.pmdlent=11 and a.pmdl005=2
+15.料件库存
+select UNIQUE(a.inag001) 料号,b.IMAAL003 品名,a.inag004 库位,a.inag006 批号,a.inag008 账面库存 from inag_t a
+left join imaal_t b on b.imaal001=a.inag001
+where a.inagent=11 and a.inag008>0
+16.工单信息
+select a.sfaadocno 工单号,a.sfaa010 生产料号,b.imaal003 品名,a.sfaa012 生产数量,to_char(a.sfaa020,'yyyy-mm-dd') 预计完工日 from sfaa_t a 
+left join imaal_t b on b.imaal001=a.sfaa010 and b.imaalent=11
+where a.sfaaent=11
+order by a.sfaadocno
+17.
+select a.bmba001 主件料号,b.imaal003 主件品名,a.bmba003 元件料号，c.imaal003 元件品名,a.bmba007 作业编号,d.oocql004
+from bmba_t a 
+left join  imaal_t b on b.imaal001=a.bmba001 
+left join  imaal_t c on c.imaal001=a.bmba003
+left join  OOCQL_T d on d.oocql002=a.bmba007 and d.oocql001=221
+where a.bmbaent=11
+18.工站
+select ecaa001,ecaa002  from ecaa_t 
+where ecaaent=11 
+19
+select a.ecbb001 工艺料号,b.imaal003 品名,a.ecbb003 项次,a.ecbb004 作业编号,c.oocql004 作业说明,a.ecbb012 工作站,d.ecaa002 工作站说明 from ecbb_t a
+left join ecba_t b on b.ecba001=a.ecbb001
+left join imaal_t b on b.imaal001=a.ecbb001 
+left join OOCQL_T c on c.oocql002=a.ecbb004 and c.oocql001=221
+left join ecaa_t  d on d.ecaa001=a.ecbb012
+where a.ecbbsite=100 and a.ecbbent=11 and b.ecbastus='Y'
+order by a.ecbb001,a.ecbb003
+20.awsi011 BPM协同设置
+select a.wsaa003,c.gzzol003, a.wsaa001,b.gzzal003,a.wsaa011 from wsaa_t a
+
+left join gzzal_t b on b.gzzal001=a.wsaa001
+
+left join gzzol_t c on c.GZZOL001=a.wsaa003
+
+where a.wsaa011='Y' and b.gzzal002='zh_CN'
+
+ORDER BY WSAA003, WSAA001
+21.awsi013 单据性质签核设置
+select a.wsab001 单据性质,b.gzzal003 程序名称, a.wsab003 单据别编号,a.wsab005 签核模板，a.wsab006 签核流程 from wsab_t a 
+left join gzzal_t b on b.gzzal001=a.wsab001
+
+where a.wsabent=11 and a.wsab006 is not null
+22.部门主管
+
+select a.ooeg001,b.ooefl003,a.ooeg011,c.ooag011 from ooeg_t a
+left join ooefl_t b on b.ooefl001=a.ooeg001
+left join ooag_t c on c.ooag001=a.ooeg011
+where ooeg003<>3
+order by a.ooeg001
+23.工艺路线
+select a.ecbb001,b.imaal003,a.ecbb003 ,a.ecbb004,c.oocql004,a.ecbb012,d.ecaa002,a.ecbb037,a.ecbb013,a.ecbb014,a.ecbb025,a.ecbb027,a.ecbb015,a.ecbb018,a.ecbb020 from ecbb_t a
+left join  imaal_t b on b.imaal001=a.ecbb001
+left join  OOCQL_T c on c.oocql002=a.ecbb004 
+left join ecaa_t d on d.ecaa001=ecbb012
+where   a.ecbbent=11 and c.oocqlent=11
+order by a.ecbb001,a.ecbb003
+
+24.单据别
+--单据别SQL
+select b.ooba002 单别,c.oobxl003 单别名称,a.oobx002 模组,e.gzzol003,a.oobx003 单据性质编号,d.gzcbl004 单据性质,a.oobx004 对应作业编号,f.gzzal003 from oobx_t a 
+inner join ooba_t b on b.ooba002=a.oobx001
+inner join oobxl_t c on c.oobxl001=a.oobx001 and oobxlent=11 and c.oobxl002='zh_CN'
+inner join gzcbl_t d on d.gzcbl002=a.oobx003 and d.gzcbl001=24 and d.gzcbl003='zh_CN' 
+left join gzzol_t e on e.GZZOL001=a.OOBX002 and e.gzzol002='zh_CN'
+inner join gzzal_t f on f.gzzal001=a.oobx004  and f.gzzal002='zh_CN'
+where a.oobxent=11  and a.oobxstus='Y' and length(a.oobx001)=5 
+order by b.ooba002
+
+25.权限
+select a.gzyal001,a.gzyal003,b.gzyb002,c.gzzal003,b.gzyb003,b.gzyb004,b.gzyb005,b.gzyb006,b.gzyb007 from gzyal_t a
+left join gzyb_t b on b.gzyb001=a.gzyal001 and b.gzybent=11
+left join gzzal_t c on c.gzzal001=b.gzyb002  and c.gzzal002='zh_CN'
+where a.gzyalent=11 and a.gzyal002='zh_CN'
+order by a.gzyal001,b.gzyb002
+
+26.作业
+select oocql002,oocql004 from oocql_t 
+where oocqlent=11 and oocql003='zh_CN' and oocql001='221'
+
+27.库位/储位
+select a.inab001,b.inayl003,a.inab002,a.inab003 from inab_t a
+left join  inayl_t b on b.inayl001=a.inab001 
+where a.inab001='WH101' and a.inab002<>' ' and inayl002='zh_CN'
+
+
+28.工单工序
+select a.sfcbdocno,a.sfcb001,a.sfcb002,a.sfcb003,b.OOCQL004 from sfcb_t a
+
+left join oocql_t b on b.oocql002=a.sfcb003 and b.oocql001=221 and b.oocql003='zh_CN' and b.oocqlent=11
+
+where a.sfcbent=11 
+order by a.sfcbdocno,a.sfcb001,a.sfcb002
+
+
+agli010
+
+29.没有维护可使用单位的料件
+select imaaent,imaa001,imaa006 from imaa_t 
+where imaa001 not in (select imao001 from imao_t)
+
+30.批量修改分类和主分群码
+update imaa_t set imaa003='201',imaa009='201'  where imaa001 like '2%' and (imaa009 <>'201' or imaa003<>'201')
+select  imaa001,imaa003,imaa009 from imaa_t where imaa001 like '2%' and (imaa009 <>'201' or imaa003<>'201')
+
+31.查询有BOM无工艺路线和有工艺路线无BOM的料件
+select bmaa001 from bmaa_t where bmaa001 not in (select ecba001 from ecba_t) and bmaaent=11 and bmaasite='ALL'
+select ecba001 from ecba_t where ecba001 not in (select bmaa001 from bmaa_t where bmaaent=11 and bmaasite='ALL')
+
+32.程序编号和名称
+select gzzal001 程序编号,gzzal003 程序名称 from gzzal_t 
+where gzzal002='zh_CN'
+
+order by gzzal001
+33.
+select a.sffb005 工单号,a.sffb006 RunCard,a.sffb007 作业编号,e.oocql004 说明,a.sffbdocno 报工单号,a.sffb001 报工类型,d.gzcbl004,a.sffbcrtid 录单人员,a.sffb011 作业人数,a.sffb017 良品数量,a.sffb018 报废数量,a.sffb019 当站下线数量,c.ooag011 姓名,TO_CHAR(a.sffbcnfdt, 'YYYY-MM-DD hh24:mm:ss') 审核日期 
+from sffb_t a 
+left join ooag_t c on c.ooag001=a.sffbcrtid 
+left join gzcbl_t d on d.gzcbl002=a.sffb001 and d.gzcbl001='4020' and d.gzcbl003='zh_CN' 
+left join oocql_t e on e.oocql002=a.sffb007 and e.oocql001='221' and e.oocqlent=11
+
+select * from sffe_t
+
+
+
+
+
+
