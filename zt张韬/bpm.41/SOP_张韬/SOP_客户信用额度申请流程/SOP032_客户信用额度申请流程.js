@@ -5,6 +5,12 @@ function formCreate(){
 return true;
 }
 function formOpen(){
+ var tGrid1 = document.getElementById("Grid1").value; //取出儲存在隱藏欄位中的Grid資料   
+   if(typeof(Grid1Obj) != undefined){  //判斷grid物件是否存在表單中   
+    if(tGrid1.length >1 ){  //判斷Grid是否有資料   
+      Grid1Obj.reload(eval(tGrid1));  //若Grid有資料則將存於隱藏中的值載入Grid中   
+     }  
+   }
 return true;
 }
 function formSave(){
@@ -92,7 +98,20 @@ function btsc_onclick(){
   //Grid1Obj.clearBinding();  //清除Binding欄位資料   
   document.getElementById("Grid1").value = Grid1Obj.toArrayString();  //將新的資料存入Grid隱藏欄位中   
   
-}  
+} 
+//客户编号,客户全名
+ function btnkh_onclick(){
+    var FileName = "SingleOpenWin";
+    var sql = "select UNIQUE(a.pmaa001) 客户编号,b.pmaal003 客户全名 from pmaa_t a left join pmaal_t b on b.pmaal001=a.pmaa001 where a.pmaa002=2 and a.pmaaent=11";
+
+  var SQLClaused = new Array(sql);
+  var SQLLabel = new Array("客户编号","客户全名");//客製開窗的Grid Label
+  var QBEField = new Array("a.pmaa001","b.pmaal003 ");//模糊查詢,須和DB Table欄位名稱相同
+  var QBELabel = new Array("客户编号","客户全名");//模糊查詢的Label
+     var ReturnId = new Array("txt1","txt2");
+     singleOpenWin(FileName, tEFGP, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
+}
+
 
 
 
