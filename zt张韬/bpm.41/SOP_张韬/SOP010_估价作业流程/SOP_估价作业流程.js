@@ -22,6 +22,14 @@ function formOpen(){
 return true;
 }
 function formSave(){
+  if(activityId == "UserTask_2" ){
+    if(document.getElementById("txt1").value==""){  
+      alert("客户名称不能为空");
+      return false;
+    }else{
+      return true;
+    }
+  }
 return true;
 }
 function formClose(){
@@ -104,6 +112,54 @@ function btn001_onclick(){
   //    var ReturnId = new Array("hdtxt1","txt3");
   //    singleOpenWin(FileName, tEFGP, SQLClaused, SQLLabel, QBEField, QBELabel, ReturnId, 720, 430);
    
+}
+//检查不能为空
+
+
+if(activityId == "UserTask_14" ){
+    var tMsg = "";
+    var tErrMsg = "不能为空";     
+    if(document.getElementById("hdn_sgzg").value==""){  
+      tMsg = tMsg + "请确认预计交货日期是否OK" + tErrMsg + " \r\n";
+    }if(txt_sgzg.value == "" && document.getElementById("hdn_sgzg").value!="Y"){  
+      tMsg = tMsg + "生管主管确认-说明" + tErrMsg + " \r\n";
+    }if(tMsg == ""){
+      return true;
+    }else{
+      alert(tMsg);
+      return false;
+    }
+    return true;
+  }
+if(activityId == "UserTask_19" ){
+    var tMsg = "";
+    var tErrMsg = "不能为空";     
+    if(document.getElementById("hdn_cz").value==""){  
+      tMsg = tMsg + "请确认预计交货日期是否OK" + tErrMsg + " \r\n";
+    }if(txt_cz.value == "" && document.getElementById("hdn_cz").value!="Y"){  
+      tMsg = tMsg + "厂长确认-说明" + tErrMsg + " \r\n";
+    }if(tMsg == ""){
+      return true;
+    }else{
+      alert(tMsg);
+      return false;
+    }
+    return true;
+  }
+if(activityId == "UserTask_24" ){
+    var tMsg = "";
+    var tErrMsg = "不能为空";     
+    if(document.getElementById("txt_ywzg").value==""){  
+      tMsg = tMsg + "业务主管备注" + tErrMsg + " \r\n";
+    }if(tMsg == ""){
+      return true;
+    }else{
+      alert(tMsg);
+      return false;
+    }
+    return true;
+  }
+  else{return true;}
 }
 
 
