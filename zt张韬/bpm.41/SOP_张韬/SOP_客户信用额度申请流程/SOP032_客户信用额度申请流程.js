@@ -1,3 +1,7 @@
+document.write('<script type="text/javascript" src="../../CustomJsLib/EFGPShareMethod.js"></script>');//for 开窗
+var tDbConn = new DataSource("SOP032","SQL0");//前面是表单代号，后面是sql command控件的名称
+var tEFGP = "T100PROD"; 
+
 function formCreate(){
 
     // document.getElementById("txt11").value = userName;
@@ -14,6 +18,7 @@ function formOpen(){
 return true;
 }
 function formSave(){
+  
 return true;
 }
 function formClose(){

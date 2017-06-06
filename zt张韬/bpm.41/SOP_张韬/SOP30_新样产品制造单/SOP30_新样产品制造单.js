@@ -24,12 +24,87 @@ if(activityId == "UserTask_4" ){
 return true;
 }
 function formSave(){
-//if(activityId == "UserTask_3" ){
-    // document.getElementById("txtUserId02").value = userId;
-  //  document.getElementById("Textbox15").value = userName;
-//}
+  var tMsg = "";
+  var tErrMsg = "不能为空"; 
+if(activityId=="UserTask_2"){
+  if (document.getElementById("txt2").value==""){
+    tMsg = tMsg + "客户名称" + tErrMsg + " \r\n";
+  }
+  if (document.getElementById("txt4").value=="") {
+tMsg = tMsg + "联络人" + tErrMsg + " \r\n";
+  }
+  if (document.getElementById("txtgczg").value=="") {
+ tMsg = tMsg + "工程主管" + tErrMsg + " \r\n";
+}
+ if (document.getElementById("txt5").value=="") {
+ tMsg = tMsg + "品名" + tErrMsg + " \r\n";
+}
+ if (document.getElementById("txt6").value=="") {
+ tMsg = tMsg + "材料" + tErrMsg + " \r\n";
+}
+if (document.getElementById("txt7").value=="") {
+tMsg = tMsg + "图号" + tErrMsg + " \r\n";
+}
+if (document.getElementById("txt8").value=="") {
+tMsg = tMsg + "预计单重" + tErrMsg + " \r\n";
+}
+if (document.getElementById("txt11").value=="") {
+tMsg = tMsg + "预计需求量" + tErrMsg + " \r\n";
+}
+if (document.getElementById("txt12").value=="") {
+tMsg = tMsg + "产品类别" + tErrMsg + " \r\n";
+}
+if (document.getElementById("txt13").value=="") {
+ tMsg = tMsg + "模具" + tErrMsg + " \r\n";
+}
+// if (document.getElementById("txt13").value=="") {
+//  alert("模具不能为空");
+// }
+if (document.getElementById("txt14").value=="") {
+ // alert("一模不能为空"); 
+ tMsg = tMsg + "一模" + tErrMsg + " \r\n";
+}
+if (document.getElementById("txt15").value=="") {
+ // alert("制造部门不能为空");
+ tMsg = tMsg + "制造部门" + tErrMsg + " \r\n";
+}
+if (document.getElementById("Date0_txt").value=="") {
+ // alert("预计完模时间不能为空");
+ tMsg = tMsg + "预计完模时间" + tErrMsg + " \r\n";
+}
+if (document.getElementById("Date1_txt").value=="") {
+ // alert("送样时间不能为空");
+  tMsg = tMsg + "送样时间" + tErrMsg + " \r\n";
+}
+if (document.getElementById("Textbox50").value==""&& document.getElementById("Textbox58").value=="") {
+ // alert("预计完模时间不能为空");
+ tMsg = tMsg + "产品基本工艺流程" + tErrMsg + " \r\n";
+}
+if (document.getElementById("Textbox8").value=="") {
+ // alert("送样时间不能为空");
+  tMsg = tMsg + "生官科" + tErrMsg + " \r\n";
+}
+
+}
+if (activityId=="UserTask_3") {
+  if (document.getElementById("Date12_txt").value=="") {
+    tMsg = tMsg + "工程确认完模时间" + tErrMsg + " \r\n";
+  }
+  if (document.getElementById("Date12_txt").value=="") {
+    tMsg = tMsg + "工程确认送样时间" + tErrMsg + " \r\n";
+  }
+}
+ if(tMsg == ""){
+      return true;
+    }
+    else{
+      alert(tMsg);
+      return false;
+    }
 return true;
 }
+
+
 function formClose(){
 return true;
 }
