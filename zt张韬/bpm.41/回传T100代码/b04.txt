@@ -1,0 +1,602 @@
+/**
+ * 
+ */
+package com.B04;
+
+import java.rmi.RemoteException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Calendar;
+
+import javax.ejb.EJBException;
+import javax.ejb.SessionContext;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+import javax.xml.namespace.QName;
+
+import org.apache.axis.client.Call;
+import org.apache.axis.client.Service;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.dsc.nana.domain.form.FormInstance;
+import java.rmi.RemoteException;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+
+import javax.ejb.EJBException;
+import javax.ejb.SessionContext;
+import com.dsc.custom.nana.util.JndiUtil;
+import com.dsc.nana.domain.form.FormInstance;
+import com.dsc.nana.services.exception.ServiceException;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hsqldb.lib.IntValueHashMap;
+import org.jboss.ws.tools.XSDTypeToJava.VAR;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.rmi.RemoteException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.ejb.EJBException;
+import javax.ejb.EJBHome;
+import javax.ejb.SessionContext;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.rmi.PortableRemoteObject;
+import javax.sql.DataSource;
+
+import com.dsc.nana.data_transfer.ActivityDefPerformerForClientListDTO;
+import com.dsc.nana.data_transfer.ActivityDefinitionForClientListDTO;
+import com.dsc.nana.domain.form.FormInstance;
+import com.dsc.nana.domain.workflow_definition.enumTypes.MultiUserMode;
+import com.dsc.nana.domain.workflow_definition.enumTypes.ParticipantType;
+import com.dsc.nana.domain.workflow_definition.enumTypes.PerformType;
+import com.dsc.nana.services.engine.PerformWorkItemHandler;
+import com.dsc.nana.services.engine.PerformWorkItemHandlerHome;
+import com.dsc.nana.services.exception.ServiceException;
+
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+
+
+
+/**
+ *
+ * <!-- begin-user-doc -->
+ * A generated session bean
+ * <!-- end-user-doc -->
+ * *
+ * <!-- begin-xdoclet-definition --> 
+ * @ejb.bean name="B04"	
+ *           description="An EJB named B04"
+ *           display-name="B04"
+ *           jndi-name="B04"
+ *           type="Stateless" 
+ *           transaction-type="Container"
+ * 
+ * <!-- end-xdoclet-definition --> 
+ * @generated
+ */
+
+public class B04Bean implements javax.ejb.SessionBean {
+
+	/** 
+	 * <!-- begin-xdoclet-definition --> 
+	 * <!-- end-xdoclet-definition --> 
+	 * @generated
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/** 
+	 *
+	 * <!-- begin-xdoclet-definition --> 
+	 * @ejb.create-method view-type="remote"
+	 * <!-- end-xdoclet-definition --> 
+	 * @generated
+	 *
+	 * //TODO: Must provide implementation for bean create stub
+	 */
+	public void ejbCreate() {
+	}
+
+	/** 
+	 *
+	 * <!-- begin-xdoclet-definition --> 
+	 * @ejb.interface-method view-type="remote"
+	 * <!-- end-xdoclet-definition --> 
+	 * @generated
+	 *
+	 * //TODO: Must provide implementation for bean method stub
+	 */
+	public String foo(String param) {
+		return null;
+	}
+	
+	
+	  /**
+		 * 
+		 * <!-- begin-xdoclet-definition -->
+		 * 
+		 * @ejb.interface-method view-type="remote" <!-- end-xdoclet-definition -->
+		 * @generated
+		 * 
+		 *            //TODO: Must provide implementation for bean method stub
+		 */
+
+			  public FormInstance insaapt330(FormInstance pForm)
+			    throws Exception
+			  {
+			    System.out.println("start...insaapt330");
+			    DataSource tDataSource = null;
+			    Connection tCon = null;
+			    Statement stmt = null;
+			    ResultSet tResultSet = null;
+				List grdItemData1 = pForm.getGridValueByID("Grid1");
+				List grdItemData2 = pForm.getGridValueByID("Grid2");
+				String TBsy=(pForm.fetchFieldValue("TBsy") == null) || (pForm.fetchFieldValue("TBsy") == "null") ? "" : pForm.fetchFieldValue("TBsy");
+				String DHSerialNumber = (pForm.fetchFieldValue("SerialNumber") == null) || (pForm.fetchFieldValue("SerialNumber") == "null") ? "" : pForm.fetchFieldValue("SerialNumber");
+				String apcaent=(pForm.fetchFieldValue("HDent") == null) || (pForm.fetchFieldValue("HDent") == "null") ? "" : pForm.fetchFieldValue("HDent");//据点上线后调整
+				String apcaownid=(pForm.fetchFieldValue("TBbxrid") == null) || (pForm.fetchFieldValue("TBbxrid") == "null") ? "" : pForm.fetchFieldValue("TBbxrid");
+				String apcaowndp=(pForm.fetchFieldValue("TBbxbmid") == null) || (pForm.fetchFieldValue("TBbxbmid") == "null") ? "" : pForm.fetchFieldValue("TBbxbmid");
+				String apcacrtid=(pForm.fetchFieldValue("TBbxrid") == null) || (pForm.fetchFieldValue("TBbxrid") == "null") ? "" : pForm.fetchFieldValue("TBbxrid");
+				String apcacrtdp=(pForm.fetchFieldValue("TBbxbmid") == null) || (pForm.fetchFieldValue("TBbxbmid") == "null") ? "" : pForm.fetchFieldValue("TBbxbmid");
+				java.util.Date utilDate = new java.util.Date();
+			    java.sql.Date tmp_apcacrtdt = new java.sql.Date(utilDate.getTime());
+			    java.sql.Date apcacrtdt = tmp_apcacrtdt;
+		        String apcamodid=(pForm.fetchFieldValue("TBbxrid") == null) || (pForm.fetchFieldValue("TBbxrid") == "null") ? "" : pForm.fetchFieldValue("TBbxrid");
+				java.sql.Date apcamoddt = tmp_apcacrtdt;
+		        String apcacnfid=(pForm.fetchFieldValue("TBbxrid") == null) || (pForm.fetchFieldValue("TBbxrid") == "null") ? "" : pForm.fetchFieldValue("TBbxrid");
+				java.sql.Date apcacnfdt = tmp_apcacrtdt;
+				String apcastus="N";
+				String apcald=(pForm.fetchFieldValue("TBztid") == null) || (pForm.fetchFieldValue("TBztid") == "null") ? "" : pForm.fetchFieldValue("TBztid");//帐套
+				String apcacomp=(pForm.fetchFieldValue("TBzwzxid") == null) || (pForm.fetchFieldValue("TBzwzxid") == "null") ? "" : pForm.fetchFieldValue("TBzwzxid");//财务中心
+				String apcadocno="";
+				java.sql.Date apcadocdt=tmp_apcacrtdt;
+				String apcasite=(pForm.fetchFieldValue("TBzwzxid") == null) || (pForm.fetchFieldValue("TBzwzxid") == "null") ? "" : pForm.fetchFieldValue("TBzwzxid");//财务中心
+				//Timestamp ts = new Timestamp(System.currentTimeMillis());
+				String apca001="15";
+				String apca003=(pForm.fetchFieldValue("TBbxrid") == null) || (pForm.fetchFieldValue("TBbxrid") == "null") ? "" : pForm.fetchFieldValue("TBbxrid");
+				String apca004="EMPL";
+				String apca005="EMPL";
+				String apca007="501";//账款类别
+				String apca008="P06";//付款条件
+				
+				
+				java.sql.Date apca009=tmp_apcacrtdt;//应付款日    
+				java.sql.Date apca010=tmp_apcacrtdt;//票到日期
+		
+			    String apca014=(pForm.fetchFieldValue("TBbxrid") == null) || (pForm.fetchFieldValue("TBbxrid") == "null") ? "" : pForm.fetchFieldValue("TBbxrid");
+				String apca015=(pForm.fetchFieldValue("TBbxbmid") == null) || (pForm.fetchFieldValue("TBbxbmid") == "null") ? "" : pForm.fetchFieldValue("TBbxbmid");
+			    String apca017="0";
+				String apca025="0";
+				//float apca026=0;
+				//float apca027=0;
+				//float apca028=0;
+			    //float apca029=0;
+				String apca035="224102";
+
+					
+				String apca040="N";
+				float apca044=0;
+				String apca052="0";
+				String apca056="0";
+				String apca057=(pForm.fetchFieldValue("TBbxrid") == null) || (pForm.fetchFieldValue("TBbxrid") == "null") ? "" : pForm.fetchFieldValue("TBbxrid");
+				String apca100="CNY";
+				float apca101=1;
+				String tmp_apca103 = (pForm.fetchFieldValue("TBbxzje") == null) || (pForm.fetchFieldValue("TBbxzje") == "null") ? "" : pForm.fetchFieldValue("TBbxzje");
+				double apca103 = Double.parseDouble(tmp_apca103);
+				float apca104=0;
+				float apca106=0;
+				float apca107=0;
+				double apca108=apca103;
+				double apca113=apca103;
+				float apca114=0;
+				float apca116=0;
+				float apca117=0;
+				double apca118=apca103;
+				
+				float apca121=1;
+				float apca123=0;
+				float apca124=0;
+				float apca126=0;
+				float apca127=0;
+				float apca128=0;
+				
+				float apca131=1;
+				float apca133=0;
+				float apca134=0;
+				float apca136=0;
+				float apca137=0;
+				float apca138=0;
+				String apcaud001="Y";
+				float apcaud011=0;
+				float apcaud012=0;
+				float apcaud013=0;
+				float apcaud014=0;
+				float apcaud015=0;
+				float apcaud016=0;
+				float apcaud017=0;
+				float apcaud018=0;
+				float apcaud019=0;
+				float apcaud020=0;
+				
+			   /* String tmp_apca12 = (pForm.fetchFieldValue("apca12") == null) || (pForm.fetchFieldValue("apca12") == "null") ? "" : pForm.fetchFieldValue("apca12");
+			    java.sql.Date apca12 = java.sql.Date.valueOf(tmp_apca12.replace('/', '-'));
+			   
+			    String tmp_apcaud15 = (pForm.fetchFieldValue("Date0") == null) || (pForm.fetchFieldValue("Date0") == "null") ? "" : pForm.fetchFieldValue("Date0");
+			    java.sql.Date apcaud15 = java.sql.Date.valueOf(tmp_apcaud15.replace('/', '-'));
+	*/
+			    
+				
+			    try
+			    {
+			    	 System.out.println("开始");
+			      tDataSource = getJndiDataSource("java:T100");//上线后调整为正式库
+			      tCon = tDataSource.getConnection();
+
+			      stmt = tCon.createStatement();
+			      java.util.Date d = new java.util.Date();
+			      SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+			      String dateNowStr = sdf.format(d);
+			      dateNowStr = dateNowStr.substring(2, 6);
+			      String sbm=(pForm.fetchFieldValue("HDsbm") == null) || (pForm.fetchFieldValue("HDsbm") == "null") ? "" : pForm.fetchFieldValue("HDsbm");
+			      String tmp_apcadocno = sbm + "P330A-" + dateNowStr;
+
+			      System.out.println("tmp_apcadocno=" + tmp_apcadocno);
+				  
+			      String tmp_sql = "select max(apcadocno) as apcadocno from apca_t where apcadocno like '" + tmp_apcadocno + "%' and apcaent='"+apcaent+"'";
+			      System.out.println("tmp_sql=" + tmp_sql);
+			      tResultSet = stmt.executeQuery(tmp_sql);
+			      System.out.println("tResultSet=" + tResultSet.getRow());
+			     String  max_apcadocno="";
+			      while (tResultSet.next())
+			      {
+			        if (tResultSet != null) {
+			          max_apcadocno = tResultSet.getString("apcadocno");
+			          System.out.println("max_apcadocno=" + max_apcadocno);
+			        }
+			      }
+
+			      if ((max_apcadocno == null) || (max_apcadocno.trim().length() == 0)) {
+			        apcadocno = tmp_apcadocno + "000001";
+			      
+			        String tSql ="insert into oobf_t(oobfent,oobfsite,oobf001,oobf002,oobf003,oobf004,oobfud011,oobfud012,oobfud013,oobfud014,oobfud015,oobfud016,oobfud017,oobfud018,oobfud019,oobfud020)" + 
+			        		 "values('"+apcaent+"','"+apcasite+"','"+sbm+"','P330A','"+dateNowStr+"','1','0.000000','0.000000','0.000000','0.000000','0.000000','0.000000','0.000000','0.000000','0.000000','0.000000')";
+			      
+			        System.out.println("tSql:" + tSql);
+					   stmt.executeUpdate(tSql);   
+			             System.out.println("插入OOBF成功！" );
+			      
+			      }
+			      else {
+			        max_apcadocno = max_apcadocno.substring(13, 19);
+			        int Num = Integer.parseInt(max_apcadocno) + 1;
+			        System.out.println("Num"+Num );
+			        String STR_FORMAT = "000000";
+			        DecimalFormat df = new DecimalFormat(STR_FORMAT);
+			        apcadocno = tmp_apcadocno + df.format(Num);
+			        
+			        String tSql ="update oobf_t set oobf004='"+Num+"' where oobf002='P330A' AND oobf003='"+dateNowStr+"' and oobf001='"+sbm+"' and oobfent='"+apcaent+"' ";
+			        
+			        		System.out.println("tSql:" + tSql);
+					   stmt.executeUpdate(tSql);   
+			             System.out.println("更新OOBF成功！" );
+			      }
+			      System.out.println("apcadocno=" + apcadocno);
+			      stmt = tCon.createStatement();
+
+			      String tSql = "insert into  apca_t(apcaent,apcaownid,apcaowndp,apcacrtid,apcacrtdp,apcacrtdt,apcamodid,apcamoddt,apcacnfid,apcacnfdt,apcastus,apcald,apcacomp,apcadocno,apcadocdt,apcasite,apca001,apca003,apca004,apca005,apca007,apca008,apca009,apca010,apca014,apca015,apca017,apca025,apca035,apca040,apca044,apca052,apca056,apca057,apca100,apca101,apca103,apca104,apca106,apca107,apca108,apca113,apca114,apca116,apca117,apca118,apca121,apca123,apca124,apca126,apca127,apca128,apca131,apca133,apca134,apca136,apca137,apca138,apcaud011,apcaud012,apcaud013,apcaud014,apcaud015,apcaud016,apcaud017,apcaud018,apcaud019,apcaud020,apcaud001,apca053)" + 
+			        "values('"+apcaent+"','"+apcaownid+"','"+apcaowndp+"','"+apcacrtid+"','"+apcacrtdp+"',to_timestamp('"+apcacrtdt+"','YYYY-MM-DD HH24:MI:SS'),'"+apcamodid+"',to_timestamp('"+apcamoddt+"','YYYY-MM-DD HH24:MI:SS'),'"+apcacnfid+"',to_timestamp('"+apcacnfdt+"','YYYY-MM-DD HH24:MI:SS'),'"+apcastus+"','"+apcald+"','"+apcacomp+"','"+apcadocno+"',to_date('"+apcadocdt+"','yyyy-mm-dd'),'"+apcasite+"','"+apca001+"','"+apca003+"','"+apca004+"','"+apca005+"','"+apca007+"','"+apca008+"',to_date('"+apca009+"','yyyy-mm-dd'),to_date('"+apca010+"','yyyy-mm-dd'),'"+apca014+"','"+apca015+"','"+apca017+"','"+apca025+"','"+apca035+"','"+apca040+"','"+apca044+"','"+apca052+"','"+apca056+"','"+apca057+"','"+apca100+"','"+apca101+"','"+apca103+"','"+apca104+"','"+apca106+"','"+apca107+"','"+apca108+"','"+apca113+"','"+apca114+"','"+apca116+"','"+apca117+"','"+apca118+"','"+apca121+"','"+apca123+"','"+apca124+"','"+apca126+"','"+apca127+"','"+apca128+"','"+apca131+"','"+apca133+"','"+apca134+"','"+apca136+"','"+apca137+"','"+apca138+"','"+apcaud011+"','"+apcaud012+"','"+apcaud013+"','"+apcaud014+"','"+apcaud015+"','"+apcaud016+"','"+apcaud017+"','"+apcaud018+"','"+apcaud019+"','"+apcaud020+"','"+apcaud001+"','"+DHSerialNumber+"')";
+			      System.out.println("tSql:" + tSql);
+			   stmt.executeUpdate(tSql);   
+	             System.out.println("插入单头成功！" );
+
+
+				String 	apcbent=(pForm.fetchFieldValue("HDent") == null) || (pForm.fetchFieldValue("HDent") == "null") ? "" : pForm.fetchFieldValue("HDent");
+				String  apcbld=apcald;
+				String  apcborga=(pForm.fetchFieldValue("TBzwzxid") == null) || (pForm.fetchFieldValue("TBzwzxid") == "null") ? "" : pForm.fetchFieldValue("TBzwzxid");
+				String  apcbdocno=apcadocno;
+				String  apcbseq="01";
+				//String  apcb005="员工报销";
+				float  apcb007=1;
+				String  apcb010=(pForm.fetchFieldValue("TBbxbmid") == null) || (pForm.fetchFieldValue("TBbxbmid") == "null") ? "" : pForm.fetchFieldValue("TBbxbmid");
+				String apcb020="VAT200";
+				String  apcb022="1";
+				String  apcb023="N";
+				String  apcb029="224102";
+				String  apcb030="P06";
+				String  apcb051=(pForm.fetchFieldValue("TBbxrid") == null) || (pForm.fetchFieldValue("TBbxrid") == "null") ? "" : pForm.fetchFieldValue("TBbxrid");
+				String  apcb100="CNY";
+				float  apcb102=1;
+				float  apcb103=0;
+				float  apcb104=0;
+				float  apcb105=0;
+				float  apcb106=0;
+				float  apcb107=0;
+				float  apcb111=0;
+				float  apcb114=0;
+				float  apcb115=0;
+				float  apcb116=0;
+				float  apcb117=0;
+				float  apcb119=0;
+				float  apcb123=0;
+				float  apcb124=0;
+				float  apcb125=0;
+				float  apcb126=0;
+				float  apcb127=0;
+				float  apcb128=0;
+				float  apcb133=0;
+				float  apcb134=0;
+				float  apcb135=0;
+				float  apcb136=0;
+				float  apcb137=0;
+				float  apcb138=0;
+				float  apcbud011=0;
+				float  apcbud012=0;
+				float  apcbud013=0;
+				float  apcbud014=0;
+				float  apcbud015=0;
+				float  apcbud016=0;
+				float  apcbud017=0;
+				float  apcbud018=0;
+				float  apcbud019=0;
+				float  apcbud020=0;
+				
+				
+				 String 	apccent=apcaent;  
+					String 	apccld=apcald; 
+					String 	apcccomp=apcacomp; 
+					String 	apccsite=apcasite; 
+					String 	apccdocno=apcadocno; 
+					String 	apcc001="0"; 
+					//String 	apcc002=" "; //应付款别性质
+					java.sql.Date apcc003=apca009;//应付款日
+					java.sql.Date apcc004=apca009;//应付款日
+					java.sql.Date apcc005=apca009;//应付款日
+					
+					float  	apcc006=1; 
+					float 	apcc007=0; 
+					java.sql.Date apcc010=apca009;//应付款日
+					java.sql.Date apcc011=apca009;//应付款日
+					java.sql.Date apcc012=apca009;//应付款日
+					java.sql.Date apcc013=apca009;//应付款日
+					java.sql.Date apcc014=apca009;//应付款日
+					String 	apcc100="CNY"; 
+					float  	apcc101=1;
+					float  	apcc102=1;
+					String 	apcc108=(pForm.fetchFieldValue("TBbxzje") == null) || (pForm.fetchFieldValue("TBbxzje") == "null") ? "" : pForm.fetchFieldValue("TBbxzje"); 
+					float  	apcc109=0;
+					float  	apcc113=0;
+					float  	apcc114=0;
+					float  	apcc115=0;
+					float  	apcc116=0;
+					float  	apcc117=0;
+					String 	apcc118=apcc108;
+
+					float  	apcc119=0;
+					float  	apcc121=0;
+					float  	apcc122=0;
+					float  	apcc123=0;
+					float  	apcc124=0;
+					float  	apcc125=0;
+					float  	apcc126=0;
+					
+					float  	apcc127=0;
+					
+					float  	apcc128=0;
+					float  	apcc129=0;
+					
+					float  	apcc131=0;
+					float  	apcc132=0;
+					float  	apcc133=0;
+					float  	apcc134=0;
+					float  	apcc135=0;
+					float  	apcc136=0;
+					float  	apcc137=0;
+					
+					float  	apcc138=0;
+					float  	apcc139=0;
+					
+					float  	apccud011=0;
+					float  	apccud012=0;
+					float  	apccud013=0;
+					float  	apccud014=0;
+					float  	apccud015=0;
+					float  	apccud016=0;
+					float  	apccud017=0;
+					float  	apccud018=0;
+					float  	apccud019=0;
+					float  	apccud020=0;
+					
+					//String  	apcc015="999";
+					//String  	apcc016="3";		 
+					String  	apcc009="0";//发票号码，需要调整
+		String tsql3="insert into apcc_t(apccent,apccld,apcccomp,apccsite,apccdocno,apccseq,apcc001,apcc003,apcc004,apcc005,apcc006,apcc007," +"apcc010,apcc011,apcc012,apcc013,apcc014,apcc100,apcc101,apcc102," +
+		         "apcc108,apcc109,apcc113,apcc114,apcc115,apcc116,apcc117,apcc118,apcc119,apcc121,apcc122,apcc123,apcc124,apcc125,apcc126,apcc127,apcc131,apcc132,apcc133,apcc134,apcc135,apcc136,apcc137,apcc009,apcc128,apcc129,apcc138,apcc139,apccud011,apccud012,apccud013,apccud014,apccud015,apccud016,apccud017,apccud018,apccud019,apccud020) "+" values ('"+apccent+"','"+apccld+"','"+apcccomp+"','"+apccsite+"','"+apccdocno+"','1','"+apcc001+"',to_date('"+apcadocdt+"','yyyy-mm-dd'),to_date('"+apcadocdt+"','yyyy-mm-dd'),to_date('"+apcadocdt+"','yyyy-mm-dd'),'"+apcc006+"','"+apcc007+"',to_date('"+apcadocdt+"','yyyy-mm-dd'),to_date('"+apcadocdt+"','yyyy-mm-dd'),to_date('"+apcadocdt+"','yyyy-mm-dd'),to_date('"+apcadocdt+"','yyyy-mm-dd'),to_date('"+apcadocdt+"','yyyy-mm-dd'),'"+apcc100+"','"+apcc101+"','"+apcc102+"','"+apca108+"','"+apcc109+"','"+apcc113+"','"+apcc114+"','"+apcc115+"','"+apcc116+"','"+apcc117+"','"+apcc118+"','"+apcc119+"','"+apcc121+"','"+apcc122+"','"+apcc123+"','"+apcc124+"','"+apcc125+"','"+apcc126+"','"+apcc127+"','"+apcc131+"','"+apcc132+"','"+apcc133+"','"+apcc134+"','"+apcc135+"','"+apcc136+"','"+apcc137+"','"+apcc009+"','"+apcc128+"','"+apcc129+"','"+apcc138+"','"+apcc139+"','"+apccud011+"','"+apccud012+"','"+apccud013+"','"+apccud014+"','"+apccud015+"','"+apccud016+"','"+apccud017+"','"+apccud018+"','"+apccud019+"','"+apccud020+"')";
+		         System.out.println("插入单身tsql3..." + tsql3);
+		         stmt.executeUpdate(tsql3);
+		         System.out.println("insert into apcc_file  success");
+				
+				
+			     for (int j =0;j<grdItemData1.size();j++)
+	    	 {
+	    Map gridItemMap1 = (Map)grdItemData1.get(j);
+	         String tsql2="insert into apcb_t(apcbent,apcbld,apcborga,apcbdocno,apcbseq,apcb005,apcb007,apcb010,apcb014," +"apcb022,apcb023,apcb029,apcb030,apcb047,apcb051,apcb100,apcb101,apcb102,apcb103,apcb104,apcb105,apcb106,apcb107,apcb108,apcb111,apcb113,apcb114,apcb115,apcb116,apcb117,apcb118,apcb119,apcb123,apcb124,apcb125,apcb126,apcb127,apcb128,apcb133,apcb134,apcb135,apcb136,apcb137,apcb138," +
+	         "apcbud011,apcbud012,apcbud013,apcbud014,apcbud015,apcbud016,apcbud017,apcbud018,apcbud019,apcbud020,apcb021,apcb020) "+" values ('"+apcbent+"','"+apcbld+"','"+apcborga+"','"+apcbdocno+"','"+gridItemMap1.get("fid")+"','"+gridItemMap1.get("gTBfyyy")+"','"+apcb007+"','"+apcb010+"','"+gridItemMap1.get("gTBfyyyid")+"','"+apcb022+"','"+apcb023+"','"+apcb029+"','"+apcb030+"','"+TBsy+"','"+apcb051+"','"+apcb100+"','"+gridItemMap1.get("gTBbxje")+"','"+apcb102+"','"+apcb103+"','"+apcb104+"','"+apcb105+"','"+apcb106+"','"+apcb107+"','"+gridItemMap1.get("gTBbxje")+"','"+apcb111+"','"+gridItemMap1.get("gTBbxje")+"','"+apcb114+"','"+gridItemMap1.get("gTBbxje")+"','"+apcb116+"','"+apcb117+"','"+gridItemMap1.get("gTBbxje")+"','"+apcb119+"','"+apcb123+"','"+apcb124+"','"+apcb125+"','"+apcb126+"','"+apcb127+"','"+apcb128+"','"+apcb133+"','"+apcb134+"','"+apcb135+"','"+apcb136+"','"+apcb137+"','"+apcb138+"','"+apcbud011+"','"+apcbud012+"','"+apcbud013+"','"+apcbud014+"','"+apcbud015+"','"+apcbud016+"','"+apcbud017+"','"+apcbud018+"','"+apcbud019+"','"+apcbud020+"','"+gridItemMap1.get("gTBfykmid")+"','"+apcb020+"')";	//apcb015是什么。,apcb015         
+	         System.out.println("插入单身tsql2..." + tsql2);
+	         stmt.executeUpdate(tsql2);
+	         System.out.println("insert into apcb_t  success");
+	    	 }
+			     String 	apceent=apcaent;  
+			     String 	apceld=apcald; 
+			     String 	apcecomp=apcacomp; 
+			     String 	apcesite=apcasite; 
+			     String 	apcedocno=apcadocno; 
+			     String  apceorga=apcacomp;
+			     String  apce001="aapt331";
+			     String  apce002="41";
+			     String  apce005="0";
+			     String  apce007="0";
+			     String  apce015="C";
+			     String  apce016="1221";
+			     String  apce017=apca014;
+			     String  apce027="N";
+			     String  apce100="CNY";
+			     String  apce101="1";
+				 
+				 
+				 
+				 
+				 
+			     String  apce124="0";
+			     String  apce129="0";
+			     String  apce134="0";
+			     String  apce139="0";
+			     String  apceud011="0";
+			     String  apceud012="0";
+			     String  apceud013="0";
+			     String  apceud014="0";
+			     String  apceud015="0";
+			     String  apceud016="0";
+			     String  apceud017="0";
+			     String  apceud018="0";
+			     String  apceud019="0";
+			     String  apceud020="0";
+			     String  apce103="0";
+			     String  apce113="0";
+			     String  apce123="0";
+			     String  apce133="0";
+			     for (int j =0;j<grdItemData2.size();j++)
+			     	    	 {
+			     	    Map gridItemMap2 = (Map)grdItemData2.get(j);
+			     	         String tsql2="insert into apce_t(apceent,apcecomp,apcesite,apceld,apceorga,apcedocno,apceseq,apce001," +
+			     	         "apce002,apce003,apce004,apce005,apce007,apce015,apce016,apce017,apce027,apce100,apce101,apce104,apce109,apce114,apce119,apce124,apce129,apce134,apce139,apceud011,apceud012,apceud013,apceud014,apceud015,apceud016,apceud017,apceud018,apceud019,apceud020,apce103,apce113,apce123,apce133) "+" values ('"+apceent+"','"+apcecomp+"','"+apcesite+"','"+apceld+"','"+apceorga+"','"+apcedocno+"','"+gridItemMap2.get("gxh")+"','"+apce001+"','"+apce002+"','"+gridItemMap2.get("gTBzzdh")+"','"+gridItemMap2.get("gTBxc")+"','"+apce005+"','"+apce007+"','"+apce015+"','"+apce016+"','"+apce017+"','"+apce027+"','"+apce100+"','"+apce101+"',0,"+gridItemMap2.get("gTBczje")+",0,"+gridItemMap2.get("gTBczje")+",'"+apce124+"','"+apce129+"','"+apce134+"','"+apce139+"','"+apceud011+"','"+apceud012+"','"+apceud013+"','"+apceud014+"','"+apceud015+"','"+apceud016+"','"+apceud017+"','"+apceud018+"','"+apceud019+"','"+apceud020+"',"+gridItemMap2.get("gTBczje")+","+gridItemMap2.get("gTBczje")+",'"+apce123+"','"+apce133+"')";        
+			     	         System.out.println("插入单身tsql2..." + tsql2);
+			     	         stmt.executeUpdate(tsql2);
+			     	         System.out.println("insert into apce_t  success");
+			     	    	 }
+			 
+			     
+	
+			    
+			 pForm.configureFieldValue("TBt100",apcadocno);	//回写表单ERP账款编号
+			    }
+			    catch (SQLException ex) {
+			      throw new ServiceException(ex);
+			    } catch (Exception e) {
+			      throw new ServiceException(e);
+			    } finally {
+			      try {
+			        if (tCon != null) {
+			          tCon.close();
+			        }
+			        if (stmt != null)
+			          stmt.close();
+			      }
+			      catch (SQLException localSQLException1) {
+			      }
+			    }
+			    return pForm;
+			  }	 									  
+
+			//取得 DataSource
+			  private DataSource getJndiDataSource(String pDataSource) throws Exception {
+			  DataSource tDs = null;
+			  Context tCtx = null;
+			  try { 
+			  tCtx = new InitialContext();
+			  tDs = (DataSource) tCtx.lookup(pDataSource);
+			  }
+			  finally {
+			  if (tCtx != null) {
+			  	try {
+			  		tCtx.close();
+			  	}
+			  	catch (Exception ex) {
+			  		ex.printStackTrace();
+			  	}
+			  	tCtx = null;
+			  }
+			  }
+			  if (tDs == null) {
+			  throw new Exception("Can not get DataSource from jndi name " + pDataSource);
+			  }
+			  return tDs;
+			  }
+		
+	
+	
+	
+	
+	
+	
+	
+	
+
+	/* (non-Javadoc)
+	 * @see javax.ejb.SessionBean#ejbActivate()
+	 */
+	public void ejbActivate() throws EJBException, RemoteException {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see javax.ejb.SessionBean#ejbPassivate()
+	 */
+	public void ejbPassivate() throws EJBException, RemoteException {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see javax.ejb.SessionBean#ejbRemove()
+	 */
+	public void ejbRemove() throws EJBException, RemoteException {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see javax.ejb.SessionBean#setSessionContext(javax.ejb.SessionContext)
+	 */
+	public void setSessionContext(SessionContext arg0) throws EJBException,
+			RemoteException {
+		// TODO Auto-generated method stub
+
+	}
+
+	/**
+	 * 
+	 */
+	public B04Bean() {
+		// TODO Auto-generated constructor stub
+	}
+}
